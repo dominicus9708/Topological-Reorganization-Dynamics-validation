@@ -1,0 +1,14 @@
+GW170817 input manifest
+======================
+
+h1_input_rows: 16777216
+l1_input_rows: 16777216
+v1_input_rows: 16777216
+merged_input_rows: 16777216
+summary_rows: 31
+
+h1_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\input\gw170817_h1_input_4khz_4096s.csv
+l1_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\input\gw170817_l1_input_4khz_4096s.csv
+v1_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\input\gw170817_v1_input_4khz_4096s.csv
+merged_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\input\gw170817_h1_l1_v1_input_4khz_4096s.csv
+summary_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\input\gw170817_event_summary_input.csv

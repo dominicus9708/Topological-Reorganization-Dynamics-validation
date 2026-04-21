@@ -1,0 +1,34 @@
+Mercury integration report
+=========================
+
+Purpose
+-------
+This integration stage compares the standard orbital baseline and the topological structure-response output without forcing them into the same observational status.
+
+Selected run folders
+--------------------
+standard_run_dir: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\standard
+topological_run_dir: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\topological
+topological_mode: derived_002
+
+Interpretation
+--------------
+The upper-panel comparison plot shows the ordinary Mercury orbital radius baseline over time. The lower-panel comparison plot shows the topological structural response on the same time axis.
+The phase plot shows how the structural response varies with orbital radius, with the color scale indicating the relative size of the topological term compared with the Newtonian baseline.
+
+Key copied metrics
+------------------
+standard_mean_eccentricity: 0.20563659809836388
+standard_mean_semi_major_axis_au: 0.3870982322445338
+standard_mean_sidereal_period_day: 87.96910488030898
+standard_min_radius_au: 0.3075438577399671
+standard_max_radius_au: 0.4666722865602122
+topological_topo_to_newton_ratio_max: 0.00014696413297959226
+topological_topo_to_newton_ratio_mean: 0.00012526843127639916
+topological_g_topological_abs_max: 3.030088012137623e-07
+topological_sigma_derived_min: -1.0
+topological_sigma_derived_max: 0.8126060116119593
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\Integration\20260420_125214

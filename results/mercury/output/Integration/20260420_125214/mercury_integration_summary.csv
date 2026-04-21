@@ -1,0 +1,16 @@
+﻿metric,value,note
+standard_run_dir,C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\standard,Standard run folder selected automatically.
+topological_run_dir,C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\topological,Topological run folder selected automatically.
+topological_mode,derived_002,Topological output mode used for integration.
+standard_mean_eccentricity,0.20563659809836388,Copied from standard baseline summary.
+standard_mean_semi_major_axis_au,0.3870982322445338,Copied from standard baseline summary.
+standard_mean_sidereal_period_day,87.96910488030898,Copied from standard baseline summary.
+standard_mean_periapsis_distance_qr_au,0.30749666863698016,Copied from standard baseline summary.
+standard_mean_apoapsis_distance_ad_au,0.4666997958520876,Copied from standard baseline summary.
+standard_min_radius_au,0.3075438577399671,Copied from standard baseline summary.
+standard_max_radius_au,0.4666722865602122,Copied from standard baseline summary.
+topological_sigma_derived_min,-1.0,Copied from topological summary.
+topological_sigma_derived_max,0.8126060116119593,Copied from topological summary.
+topological_topo_to_newton_ratio_max,0.00014696413297959226,Copied from topological summary.
+topological_topo_to_newton_ratio_mean,0.00012526843127639916,Copied from topological summary.
+topological_g_topological_abs_max,3.030088012137623e-07,Copied from topological summary.

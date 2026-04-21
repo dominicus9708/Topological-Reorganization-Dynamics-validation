@@ -1,0 +1,49 @@
+GW170817 standard report
+=======================
+
+Purpose
+-------
+This standard stage preserves the detector-baseline waveform organization for GW170817 using the H1, L1, and V1 input bundle without introducing any topological response model.
+
+Baseline status
+---------------
+h1_rows: 16777216.0
+l1_rows: 16777216.0
+v1_rows: 16777216.0
+merged_rows: 16777216.0
+h1_sample_rate_hz: 4096.0
+l1_sample_rate_hz: 4096.0
+v1_sample_rate_hz: 4096.0
+h1_duration_s: 4096.0
+l1_duration_s: 4096.0
+v1_duration_s: 4096.0
+h1_gps_start: 1187006834.0
+l1_gps_start: 1187006834.0
+v1_gps_start: 1187006834.0
+
+Peak and detector-difference summary
+-----------------------------------
+h1_peak_time_centered_s: -1408.764892578125
+l1_peak_time_centered_s: 179.401611328125
+v1_peak_time_centered_s: 1235.94775390625
+merged_peak_time_centered_s: -1750.9765625
+h1_peak_abs_strain: 2.023921779902421e-17
+l1_peak_abs_strain: 1.4536235516127274e-17
+v1_peak_abs_strain: 8.552819052931648e-18
+merged_peak_abs_mean_strain: 8.839843184280062e-18
+mean_abs_diff_h1_l1: 5.262442184790519e-18
+mean_abs_diff_h1_v1: 4.429324364398147e-18
+mean_abs_diff_l1_v1: 2.997763743545531e-18
+max_abs_diff_h1_l1: 2.972438298957449e-17
+max_abs_diff_h1_v1: 2.2276774699252413e-17
+max_abs_diff_l1_v1: 1.6030439697155722e-17
+standard_peak_sample_index: 1216608.0
+standard_peak_gps_time: 1187007131.0234375
+
+Interpretation status
+---------------------
+The standard stage should be read only as the ordinary detector-baseline waveform summary for later comparison against topological response models.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW170817\output\standard\20260420_181312

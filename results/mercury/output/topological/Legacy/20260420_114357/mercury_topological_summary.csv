@@ -1,0 +1,19 @@
+﻿metric,value,note
+elements_rows,13,Number of elements input rows.
+vectors_rows,73,Number of vectors rows used in topological response stage.
+a_reference_au,0.3870982322445338,Reference semi-major axis used in sigma(r)=beta*ln(r/a).
+beta,1.0,Trial structural coefficient beta.
+xi_cinfo2,1e-08,Trial combined scale xi*c_info^2 in AU^2/day^2.
+sigma_trial_min,-0.23006078703663072,Minimum trial structural contrast.
+sigma_trial_max,0.18694877858214484,Maximum trial structural contrast.
+grad_sigma_trial_min_per_au,2.1428313375342793,Minimum trial structural gradient.
+grad_sigma_trial_max_per_au,3.251568759488979,Maximum trial structural gradient.
+g_topological_abs_max,3.251568759488979e-08,Maximum absolute trial topological response acceleration.
+topo_to_newton_ratio_max,1.5770630478311075e-05,Maximum ratio |g_topo|/|g_newton|.
+topo_to_newton_ratio_mean,1.3442478108125387e-05,Mean ratio |g_topo|/|g_newton|.
+perihelion_like_date,A.D. 2026-Aug-14 00:00:00.0000,Date at minimum R_AU in topological vectors response.
+aphelion_like_date,A.D. 2026-Jan-06 00:00:00.0000,Date at maximum R_AU in topological vectors response.
+sigma_trial_at_perihelion_like,-0.23006078703663072,Trial structural contrast at perihelion-like date.
+sigma_trial_at_aphelion_like,0.18694877858214484,Trial structural contrast at aphelion-like date.
+g_topological_at_perihelion_like,-3.251568759488979e-08,Trial topological response at perihelion-like date.
+g_topological_at_aphelion_like,-2.1428313375342794e-08,Trial topological response at aphelion-like date.

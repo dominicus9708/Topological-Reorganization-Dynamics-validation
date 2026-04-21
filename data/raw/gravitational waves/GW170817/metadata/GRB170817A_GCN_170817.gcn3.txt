@@ -1,0 +1,281 @@
+////////////////////////////////////////////////////////////////////////
+TITLE:   GCN CIRCULAR
+NUMBER:  21520
+SUBJECT: GRB 170817A: Fermi GBM detection
+DATE:    17/08/17 20:00:07 GMT
+FROM:    Andreas von Kienlin at MPE  <azk@mpe.mpg.de>
+
+A. von Kienlin (MPE), C. Meegan (UAH) and A. Goldstein (USRA)
+report on behalf of the Fermi GBM Team:
+
+"At 12:41:06.47 UT on 17 August 2017, the Fermi Gamma-Ray Burst Monitor
+triggered and located GRB 170817A (trigger 524666471 / 170817529).
+
+The on-ground calculated location, using the GBM trigger
+data, is RA = 176.8, DEC = -39.8 (J2000 degrees,
+equivalent to 12 h 47 m, -39 d 48'), with an uncertainty
+of 11.6 degrees (radius, 1-sigma containment,
+statistical only; there is additionally a systematic
+error which we have characterized as a core-plus-tail model, with 90% of
+GRBs having a 3.7 deg error and a small tail suffering a larger than 10 deg
+systematic error. [Connaughton et al. 2015, ApJS, 216, 32] ).
+
+The angle from the Fermi LAT boresight at the GBM trigger time is 91 degrees.
+
+The GRB light curve shows a weak short pulse
+with a duration (T90) of about 2 s (50-300 keV).
+The time-averaged spectrum from T0-0.512 s to 2.048 s is
+well fit by a power law function with an exponential
+high-energy cutoff.  The power law index is -0.89 +/- 0.5 and
+the cutoff energy, parameterized as Epeak, is 82 +/- 21 keV
+
+The event fluence (10-1000 keV) in this time interval is
+(2.3 +/- 0.4)E-07 erg/cm^2. The 1.024-sec peak photon flux measured
+starting from T0-0.32 s in the 8-1000 keV band
+is 1.9 +/- 0.2 ph/s/cm^2.
+
+The spectral analysis results presented above are preliminary;
+final results will be published in the GBM GRB Catalog."
+
+////////////////////////////////////////////////////////////////////////
+TITLE:   GCN CIRCULAR
+NUMBER:  21540
+SUBJECT: GRB 170817B: Fermi GBM detection
+DATE:    17/08/18 04:12:29 GMT
+FROM:    Oliver J Roberts at USRA/NASA  <oliver.roberts@nasa.gov>
+
+O.J. Roberts (USRA) and C. Meegan (UAH) report on behalf of 
+the Fermi GBM Team:
+
+"At 21:47:34.43 UT on 17 August 2017, the Fermi Gamma-Ray 
+Burst Monitor triggered and located GRB 170817B 
+(trigger 524699259 / 170817908). The on-ground calculated 
+location, using the GBM trigger data, is RA = 83.0, 
+DEC = +50.1, with an uncertainty of 3.7 degrees (radius, 
+1-sigma containment, statistical only; there is additionally 
+a systematic error which we have characterized as a 
+core-plus-tail model, with 90% of GRBs having a 3.7 deg error 
+and a small tail suffering a larger than 10 deg systematic error. 
+[Connaughton et al. 2015, ApJS, 216, 32] ).
+
+The initial angle from the Fermi LAT boresight to
+the GBM best location is 90 degrees.
+
+The GBM triggered multiple short unresolvable pulses over a
+total duration (T90) of 2.6 s (50-300 keV).
+The time-averaged spectrum from T0+0.0 to T0+2.6 s is
+best fit by a power law function with an exponential
+high-energy cutoff.  The power law index is -0.87 +/- 0.06 and
+the cutoff energy, parameterized as Epeak, is 1120 +/- 228 keV
+
+The event fluence (10-1000 keV) in this time interval is
+(4.93 +/- 0.16)E-06 erg/cm^2. The 64 ms peak photon flux measured
+starting from T0+0.0 s in the 10-1000 keV band
+is 10.4 +/- 1.6 ph/s/cm^2.
+
+
+The spectral analysis results presented above are preliminary;
+final results will be published in the GBM GRB Catalog."
+
+////////////////////////////////////////////////////////////////////////
+TITLE:   GCN CIRCULAR
+NUMBER:  21593
+SUBJECT: GRB 170817B: Insight-HXMT observation
+DATE:    17/08/19 13:32:35 GMT
+FROM:    Shaolin Xiong at IHEP  <xiongsl@ihep.ac.cn>
+
+Z. W. Li, J. Y. Liao, C. K. Li, X. B. Li, S. L. Xiong, C. Z. Liu,
+X. F. Li, Z. Chang, X. F. Lu, J. L. Zhao, A. M. Zhang, Y. F. Zhang,
+C. L. Zou (IHEP), Y. J. Jin, X. Ma, Z. Zhang (THU), T. P. Li (IHEP/THU),
+F. J. Lu, L. M. Song, H. Y. Wang, M. Wu, Y. P. Xu, S. N. Zhang (IHEP),
+report on behalf of the Insight-HXMT team:
+
+During the commissioning phase, at 2017-08-17T21:47:34.00 (T0),
+Insight-HXMT detected GRB 170817B (trigger ID: HEB170817908)
+in a routine search of the data, which was also observed by
+Fermi/GBM (Roberts et al. 2017, GCN 21540).
+
+The Insight-HXMT light curve consists of multiple pulses
+with a duration (T90) of 2.64 s measured from T0+0.40 s.
+The 50-ms peak rate, measured from T0+0.40 s, is 6135.4 cnts/sec.
+The total counts from this burst is 5353.1 counts.
+
+URL_LC: http://www.hxmt.org/images/GRB/HEB170817908_lc.jpg
+
+All measurements above are made with the CsI detectors operating in the
+regular mode with the energy range of about 80-800 keV (record energy).
+Only gamma-rays with energy greater than about 200 keV can penetrate
+the spacecraft and leave signals in the CsI detectors installed inside
+of the telescope.
+
+The time-averaged spectrum from T0 to T0+3.60 s is
+adequately fit by a Power Law model with spectral index = -1.60 +/- 0.05.
+The energy fluence is (1.09 +/- 0.05)E-05 erg/cm^2 in 200 - 5000 keV in
+this time interval.
+
+The analysis results presented above are preliminary;
+final results will be published elsewhere.
+
+Insight-HXMT is the first Chinese space X-ray telescope, which was funded
+jointly by the China National Space Administration (CNSA) and the Chinese
+Academy of Sciences (CAS). More information about it could be found at:
+http://www.hxmt.org/index.php/enhome .
+
+////////////////////////////////////////////////////////////////////////
+TITLE:   GCN CIRCULAR
+NUMBER:  22206
+SUBJECT: LIGO/Virgo G298048: Brightening X-ray Emission from GW170817/GRB170817A/SSS17a 
+DATE:    17/12/07 22:11:17 GMT
+FROM:    Phil Evans at U of Leicester  <pae9@leicester.ac.uk>
+
+Daryl Haggard, John J. Ruan, Melania Nynka (McGill/MSI), Vicky Kalogera (Northwestern/CIERA), and Phil Evans (Leicester) report:
+
+We have performed a detailed analysis of new Chandra X-ray observations of GW170817 obtained via Chandra Director's Discretionary Time (PI: Wilkes, Program Number 18408601). The X-ray counterpart to GW170817/GRB170817A/SSS17a is clearly detected in the new observations.
+
+This program acquired two exposures of GRB170817A: (1) a 74.09 ks exposure (ObsID 20860) beginning at 2017 December 2.08 UT, approximately 108 days post-burst, and (2) a 24.74 ks exposure (ObsID 20861) beginning at 2017 December 6.45 UT, approximately 111 days post-burst. Since the two new exposures are close in time and the X-ray emission of GRB170817A is not expected to vary significantly over ~4 day timescales, we co-add the two data sets into one 98.83 ks exposure at 109.2 days post-burst.
+
+We perform spectral extractions assuming an absorbed power-law spectral model with fixed NH = 7.5e20 cm^−2 and find that the X-ray flux of GRB170817A has an absorbed flux of f(0.3−8 keV) = 1.58e−14 +/- 0.14 erg s^−1 cm^−2  (Gamma = 1.62 +/- 0.27) at 109.2 days post-burst, which corresponds to an unabsorbed luminosity of L(0.3−10 keV) = 42.5e38 +/- 3.7 erg s^−1 (see also Troja et al. GCN 22201 and Margutti et al. GCN 22203). This represents significant X-ray brightening compared to Chandra observations at 15.6 days post-burst, for which we find an absorbed flux of f(0.3−8 keV) = 0.36e−14 +/- 0.1 erg s^−1 cm^−2 (Gamma = 2.4 +/- 0.8) and an unabsorbed luminosity of L(0.3−10 keV) = 10.4e38 +/- 2.0 erg s^−1 (Haggard et al. 2017).
+
+We also examine the three previously-detected X-ray sources CXOU J130948, CXOU 130946, and the host galaxy NGC 4993. The fluxes of CXOU 130946 and the host-galaxy NGC 4993 are consistent with our previous deep Chandra observations, while CXOU J130948 appears to be variable in X-rays (Margutti et al. 2017; Haggard et al. 2017).
+
+The origin of the X-ray emission from the NS-NS coalescence GW170817/GRB170817A is an important diagnostic for all post-merger interpretations, and different scenarios predict distinct evolution in its X-ray light curve. These observations support scenarios in which the X-ray and radio emission share a common origin, i.e., the X-ray light curve is consistent with outflow models which may be either a cocoon shocked by the jet or dynamical ejecta from the merger. Further deep X-ray monitoring can place powerful constraints on the physical parameters of these models. The X-ray brightening strengthens the argument that simple top-hat jet models are not consistent with the latest observations. However, more advanced models of structured jets with off-axis viewing angles should be pursued and cannot yet be ruled out.
+
+We thank Belinda Wilkes and the Chandra scheduling, data processing, and archive teams for making these observations possible.
+
+////////////////////////////////////////////////////////////////////////
+TITLE:   GCN CIRCULAR
+NUMBER:  22372
+SUBJECT: GW170817/GRB170817A: Preliminary results of Chandra monitoring
+DATE:    18/01/29 20:42:49 GMT
+FROM:    Eleonora Troja at GSFC  <eleonora.troja@nasa.gov>
+
+E. Troja (UMD/GSFC) and L. Piro (INAF/IAPS) report on behalf of
+a larger collaboration:
+
+The Chandra X-ray Observatory re-observed the field of GW170817
+starting on January 17th, 2018, and performed five short exposures
+observations as part of its on-going monitoring program (PI: Wilkes).
+
+Only three of these exposures (ObsID: 20936, 20938, 20939) are currently
+archived and available to the public. Here we report the preliminary 
+findings
+from these observations.
+
+The X-ray afterglow is detected with high significance in all the exposures
+at an average count rate of 0.0016 cts/s in the 0.5-8.0 keV energy band.
+A preliminary inspection of the hardness ratio does not show any 
+significant
+spectral variation. Therefore, we perform a spectral analysis using an 
+absorbed
+power-law model with absorption column fixed at the Galactic value of
+7.5E20 cm^-2 and a photon index Gamma=1.575 as derived from our broadband
+analysis (Troja et al. 2018, arXiv:1801.06516).
+
+We derive an unabsorbed X-ray flux of (3.2 +/- 0.3)E-14 erg/cm2/s in the
+0.3-10 keV energy band. The quoted error is at the 68% confidence level.
+This new measurement is higher than the value measured by Chandra
+at ~110 days (~2.5E-14 erg/cm2/s, Troja et al. 2018), and higher than the
+value measured by XMM-Newton at ~135 days (D'Avanzo et al., 2018).
+
+The latest measurement is consistent with a rising afterglow with F~t^0.8,
+although, within the errors, a slow turn-over of the X-ray light curve
+cannot be excluded.
+
+Further analysis is on-going.
+
+
+////////////////////////////////////////////////////////////////////////
+TITLE:   GCN CIRCULAR
+NUMBER:  22374
+SUBJECT: GW170817/GRB170817A: Updated results from the full Chandra dataset
+DATE:    18/01/30 13:00:12 GMT
+FROM:    Eleonora Troja at GSFC  <eleonora.troja@nasa.gov>
+
+E. Troja (UMD/GSFC) and L. Piro (INAF/IAPS) report on behalf of
+a larger collaboration:
+
+We analyzed the full set of five observations of GW170817
+performed by the Chandra X-ray Observatory between January 17th
+and January 28th, 2018, i.e. ~153 and ~164 days after the merger.
+A log of observations is reported below:
+
+ObsID   Exposure [ks]     0.5-8.0 keV count rate [cts/s]
+
+20936     31.75           0.0018 +/- 0.0002
+20937     20.77           0.0014 +/- 0.0003
+20938     15.86           0.0019 +/- 0.0003
+20939     22.25           0.0011 +/- 0.0002
+20945     14.22           0.0010 +/- 0.0003
+
+The average net count-rate is 0.00148 +/- 0.00011 cts/s,
+consistent with the value of 0.00145 +/- 0.00014 observed
+at 110 days (Troja et al. 2018, arXiv:1801.06516).
+The average spectrum, obtained by coadding the five exposures,
+is well described by an absorbed power-law model with
+N_H=7.5E20 cm^-2 and photon index Gamma=1.65+/-0.16 (68% c.l.),
+consistent with the value derived from the broadband spectrum
+at earlier times (Troja et al. 2018, arXiv:1801.06516).
+Based on this new analysis, we estimate an unabsorbed X-ray flux
+of (2.6 +/- 0.3)E-14 erg/cm2/s (68% c.l.) in the 0.3-10 keV band,
+consistent with the X-ray flux measured at 110 days.
+
+Our results do not support the claim of a decreasing X-ray flux,
+as suggested by D'Avanzo et al. (2018, arXiv:1801.06164), and
+are consistent either with a slowly rising afterglow or a slow
+turn-over of the X-ray light curve expected when the afterglow
+reaches its peak (e.g. Lazzati et al. 2017, arXiv:1712.03237;
+Troja et al. 2018, arXiv:1801.06516).
+
+We note that the X-ray afterglow displays a marginal level of
+variability on timescales of a few days, being the count-rate
+from the last two exposures (20939,20945) consistently lower.
+The spectrum from these two observations is characterized by a
+photon index Gamma= 1.9 +/- 0.3 (68% c. l.), slightly softer
+than the value measured in the first three exposures (20936,20937,
+and 20938) Gamma = 1.59+/-0.17  (68% c. l.), yet consistent within
+the large uncertainties. The lower count-rate and soft spectral
+shape could be indicative of the cooling frequency entering the
+X-ray band, although the limited statistics prevent us to draw
+any firm conclusion.
+
+////////////////////////////////////////////////////////////////////////
+TITLE:   GCN CIRCULAR
+NUMBER:  22763
+SUBJECT: GW170817/GRB170817A: LBT optical detection
+DATE:    18/06/05 14:03:37 GMT
+FROM:    Andrea Rossi at INAF  <a.rossi@iasfbo.inaf.it>
+
+A. Rossi (INAF-OAS),  M. Cantiello (INAF-OA Abruzzo) V. Testa, D. Paris 
+(INAF-OAR), A. Melandri, S. Covino,  O. S. Salafia, P. D'Avanzo, S. 
+Campana (INAF-OAB), L. Nicastro, E. Palazzi, F. Cusano (INAF-OAS), G. 
+Stratta (Urbino University/INFN Firenze), R. Carini, S. Piranomonte, E. 
+Brocato (INAF-OAR), V. D'Elia (ASDC), and M. Branchesi (GSSI) report on 
+behalf of the GRAWITA collaboration and its partners:
+
+We observed the optical counterpart of GRB 170817A (Kienlin et al., GCN 
+21520) associated to GW 170817 (LVC GCN Circ. 21509, 21513) with the LBC 
+imager mounted on the Large Binocular Telescope (Mt Graham, AZ, USA). 
+Observations were performed in the r-sloan filter on 2018-01-23, i.e., 
+~160 days after the GW/GRB trigger.
+
+At the location of the optical transient (e.g., Coulter et al., GCN 
+21529; Adams et al., 21816) we detect the optical afterglow of GRB 
+170817A with magnitude r-sloan=26.2+-0.4, calibrated against Pan-STARRS 
+field stars. Image analysis was performed after preliminary removal of 
+an elliptical model of the underlying host galaxy from each single 
+frame. However, some residual emission is left which contributes for 
+~0.2 mags to the uncertainty of the photometry.
+
+Our detection is the first one from a ground-based optical telescope. It 
+is in agreement with a turnover/flattening in the optical light curve of 
+GW 170817/GRB 170817A as inferred by Alexander at al. 2018 
+(arXiv:1805.02870) and with the overall flattening/declining temporal 
+evolution observed in the X-ray and radio bands (D'Avanzo et al. 2018, 
+A&A, 613 L1; Hajela et al. GCN Circ. 22692; Troja et al. GCN Circ. 
+22693; Dobie et al. arXiv:1803.06853; Alexander at al. 2018; 
+arXiv:1805.02870).
+
+We acknowledge the excellent support from the LBT staff in obtaining 
+these observations.
+
+

@@ -1,0 +1,27 @@
+GW170817 derived manifest
+========================
+
+h1_input: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\raw\gravitational waves\GW170817\strain\H-H1_LOSC_C00_4_V1-1187006834-4096.hdf5
+l1_input: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\raw\gravitational waves\GW170817\strain\L-L1_LOSC_C00_4_V1-1187006834-4096.hdf5
+v1_input: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\raw\gravitational waves\GW170817\strain\V-V1_LOSC_C00_4_V1-1187006834-4096.hdf5
+
+h1_rows: 16777216
+h1_sample_rate_hz: 4096.0
+h1_duration_s: 4096
+h1_gps_start: 1187006834
+l1_rows: 16777216
+l1_sample_rate_hz: 4096.0
+l1_duration_s: 4096
+l1_gps_start: 1187006834
+v1_rows: 16777216
+v1_sample_rate_hz: 4096.0
+v1_duration_s: 4096
+v1_gps_start: 1187006834
+
+merged_rows: 16777216
+
+h1_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\derived\gw170817_h1_strain_4khz_4096s.csv
+l1_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\derived\gw170817_l1_strain_4khz_4096s.csv
+v1_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\derived\gw170817_v1_strain_4khz_4096s.csv
+merged_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\derived\gw170817_h1_l1_v1_strain_merged_4khz_4096s.csv
+metadata_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW170817\derived\gw170817_metadata_summary.csv

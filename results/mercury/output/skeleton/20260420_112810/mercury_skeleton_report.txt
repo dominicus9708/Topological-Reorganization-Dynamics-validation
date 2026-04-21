@@ -1,0 +1,35 @@
+Mercury skeleton report
+======================
+
+Purpose
+-------
+This is a skeleton-stage execution report. It verifies that the prepared Mercury input files can be loaded successfully and that a timestamped results folder can be created.
+
+Input status
+------------
+elements_rows: 13
+vectors_rows: 73
+summary_rows: 11
+
+elements_first_date: A.D. 2026-Jan-01 00:00:00.0000
+elements_last_date: A.D. 2026-Dec-27 00:00:00.0000
+vectors_first_date: A.D. 2026-Jan-01 00:00:00.0000
+vectors_last_date: A.D. 2026-Dec-27 00:00:00.0000
+
+Basic diagnostics
+-----------------
+mean_eccentricity: 0.205636598098364
+mean_semi_major_axis_au: 0.387098232244534
+mean_sidereal_period_day: 87.969104880308976
+min_radius_au: 0.307543857739967
+max_radius_au: 0.466672286560212
+min_speed_au_per_day: 0.022444237708639
+max_speed_au_per_day: 0.034057599820005
+
+Interpretation status
+---------------------
+This run does not perform weak-field fitting or perihelion-advance reconstruction. It only confirms that the Mercury case has reached a reproducible skeleton stage.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\skeleton\20260420_112810

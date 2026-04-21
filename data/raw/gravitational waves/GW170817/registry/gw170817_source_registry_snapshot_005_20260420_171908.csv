@@ -1,0 +1,7 @@
+﻿source_id,title,url,category,filename,note
+gw170817_metadata_v1,GW170817 event metadata (GWOSC API v2),https://gwosc.org/api/v2/event-versions/GW170817-v1?format=json,metadata,GW170817_event_metadata_v1.json,Official GWOSC event detail endpoint for GW170817.
+grb170817a_gcn_note,GRB 170817A timing note (NASA GCN),https://gcn.gsfc.nasa.gov/other/170817.gcn3,metadata,GRB170817A_GCN_170817.gcn3.txt,NASA GCN text note containing Fermi GBM trigger timing for GRB 170817A.
+gw170817_strain_listing_json,GW170817 strain listing JSON,https://gwosc.org/api/v2/event-versions/GW170817-v1/strain-files?format=json,metadata,GW170817_strain_listing_items_005.json,Saved full strain listing JSON used for selection.
+gw170817_strain_h1,GW170817 H1 4096-second 4 kHz HDF strain file,https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW170817/v1/H-H1_LOSC_C00_4_V1-1187006834-4096.hdf5,strain,H-H1_LOSC_C00_4_V1-1187006834-4096.hdf5,Selected from confirmed GWOSC listing.
+gw170817_strain_l1,GW170817 L1 4096-second 4 kHz HDF strain file,https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW170817/v1/L-L1_LOSC_C00_4_V1-1187006834-4096.hdf5,strain,L-L1_LOSC_C00_4_V1-1187006834-4096.hdf5,Selected from confirmed GWOSC listing.
+gw170817_strain_v1,GW170817 V1 4096-second 4 kHz HDF strain file,https://gwosc.org/eventapi/json/O1_O2-Preliminary/GW170817/v1/V-V1_LOSC_C00_4_V1-1187006834-4096.hdf5,strain,V-V1_LOSC_C00_4_V1-1187006834-4096.hdf5,Selected from confirmed GWOSC listing.

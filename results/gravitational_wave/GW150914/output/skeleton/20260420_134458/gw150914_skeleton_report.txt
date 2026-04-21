@@ -1,0 +1,32 @@
+GW150914 skeleton report
+========================
+
+Purpose
+-------
+This is a skeleton-stage execution report. It verifies that the prepared GW150914 input files can be loaded successfully and that a timestamped results folder can be created.
+
+Input status
+------------
+h1_rows: 131072
+l1_rows: 131072
+merged_rows: 131072
+summary_rows: 17
+
+Basic diagnostics
+-----------------
+h1_sample_rate_hz: 4096.0
+l1_sample_rate_hz: 4096.0
+h1_peak_abs_strain: 7.706262192395323e-19
+l1_peak_abs_strain: 1.8697138664246853e-18
+merged_peak_abs_mean_strain: 1.183738246539846e-18
+h1_peak_time_centered_s: 3.9697265625
+l1_peak_time_centered_s: 6.76025390625
+merged_peak_time_centered_s: 12.61669921875
+
+Interpretation status
+---------------------
+This run does not yet perform waveform standardization, topological response modeling, or integration graphics. It only confirms that the GW150914 case has reached a reproducible skeleton stage.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\skeleton\20260420_134458

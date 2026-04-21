@@ -1,0 +1,36 @@
+﻿metric,value,note
+standard_run_dir,C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\standard,Standard run folder selected automatically.
+topological_run_dir,C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\topological\20260420_151919,Topological run folder selected automatically.
+standard_h1_sample_rate_hz,4096.0,Copied from standard baseline summary.
+standard_l1_sample_rate_hz,4096.0,Copied from standard baseline summary.
+standard_h1_peak_time_centered_s,3.9697265625,Copied from standard baseline summary.
+standard_l1_peak_time_centered_s,6.76025390625,Copied from standard baseline summary.
+standard_merged_peak_time_centered_s,12.61669921875,Copied from standard baseline summary.
+standard_h1_peak_abs_strain,7.706262192395323e-19,Copied from standard baseline summary.
+standard_l1_peak_abs_strain,1.8697138664246853e-18,Copied from standard baseline summary.
+standard_merged_peak_abs_mean_strain,1.183738246539846e-18,Copied from standard baseline summary.
+standard_h1_l1_peak_time_offset_s,2.79052734375,Copied from standard baseline summary.
+standard_mean_abs_detector_difference,1.052214074335275e-18,Copied from standard baseline summary.
+standard_max_abs_detector_difference,2.149498539230137e-18,Copied from standard baseline summary.
+topological_t_peak_raw,12.61669921875,Copied from topological summary.
+topological_A_peak_raw,1.183738246539846e-18,Copied from topological summary.
+topological_tau_decay_raw,0.0400390625,Copied from topological summary.
+topological_baseline_window_s,0.252333984375,Copied from topological summary.
+topological_envelope_window_s,0.02001953125,Copied from topological summary.
+topological_postpeak_window_s,0.2001953125,Copied from topological summary.
+topological_t_peak_env,12.60693359375,Copied from topological summary.
+topological_E_peak,1.183738246539846e-18,Copied from topological summary.
+topological_tau_decay_env,0.000244140625,Copied from topological summary.
+topological_kappa_derived,4096.0,Copied from topological summary.
+topological_sigma_env_peak,0.5492854508883923,Copied from topological summary.
+topological_sigma_obs_local_min,-2.1607917921845887,Copied from topological summary.
+topological_sigma_obs_local_max,0.7399189356005225,Copied from topological summary.
+topological_sigma_env_min,-1.2433959361344715,Copied from topological summary.
+topological_sigma_env_max,0.5492854508883923,Copied from topological summary.
+topological_propagation_proxy_env_max,228.8529080291878,Copied from topological summary.
+topological_propagation_proxy_env_mean,7.497610106312526,Copied from topological summary.
+topological_detector_mismatch_env_max,1.590609489091662,Copied from topological summary.
+topological_detector_mismatch_env_mean,0.9997621388540588,Copied from topological summary.
+topological_postpeak_rmse_sigma_env,0.1837273485643787,Copied from topological summary.
+topological_postpeak_mae_sigma_env,0.13733309401301774,Copied from topological summary.
+topological_decay_status_env,local_minimum_fallback,Copied from topological summary.

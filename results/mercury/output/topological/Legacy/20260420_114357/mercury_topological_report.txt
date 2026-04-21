@@ -1,0 +1,33 @@
+Mercury topological report
+=========================
+
+Purpose
+-------
+This is the topological response stage for the Mercury validation case. The present run does not claim a closed perihelion-advance reconstruction. Its role is to compute a reproducible weak-field structural-response quantity based on the trial form sigma(r)=beta*ln(r/a).
+
+Trial parameters
+----------------
+a_reference_au: 0.387098232244534
+beta: 1.000000000000000
+xi_cinfo2: 1.000000000000000e-08
+
+Response summary
+----------------
+sigma_trial_min: -0.230060787036631
+sigma_trial_max: 0.186948778582145
+grad_sigma_trial_min_per_au: 2.142831337534279
+grad_sigma_trial_max_per_au: 3.251568759488979
+g_topological_abs_max: 3.251568759488979e-08
+topo_to_newton_ratio_max: 1.577063047831108e-05
+topo_to_newton_ratio_mean: 1.344247810812539e-05
+perihelion_like_date: A.D. 2026-Aug-14 00:00:00.0000
+aphelion_like_date: A.D. 2026-Jan-06 00:00:00.0000
+
+Interpretation status
+---------------------
+The present topological output should be read as a structure-response quantity. It is not yet a direct observational prediction in the same status as the standard baseline.
+The main consistency question at this stage is whether the trial structural term remains small relative to the Newtonian weak-field baseline while still yielding a nonzero, traceable response.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\topological\20260420_114357

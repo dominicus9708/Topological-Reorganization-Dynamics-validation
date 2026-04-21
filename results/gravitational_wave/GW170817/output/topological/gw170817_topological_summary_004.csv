@@ -1,0 +1,57 @@
+﻿metric,value,note
+row_count,16777216,Number of rows in GW170817 topological response table.
+sample_rate_hz,4096.0,Sample rate copied from input summary.
+duration_s,4096.0,Duration copied from input summary.
+gps_start,1187006834.0,GPS start copied from input summary.
+baseline_window_s,102.4,Derived local baseline window in seconds.
+baseline_window_n,419430,Derived local baseline window in samples.
+focus_window_s,10.24,Derived gate smoothing window in seconds.
+focus_window_n,41943,Derived gate smoothing window in samples.
+lambda_D,0.6289151639054508,Derived detector-mismatch penalty weight.
+t_em,0.40000009536743164,EM-proxy center in the current centered-time axis.
+tau_em,32.0,EM-proxy tolerance width in seconds.
+tau_focus,46.149658203125,Derived event-score e-fold timescale.
+min_event_half_window_s,32.0,Minimum enforced half-width of the event window.
+event_half_window_s,230.748291015625,Half-width of derived event window in seconds.
+event_half_window_n,945145,Half-width of derived event window in samples.
+envelope_window_s,46.149658203125,Derived event-envelope window in seconds.
+envelope_window_n,189029,Derived event-envelope window in samples.
+focus_idx,8385573,Sample index of the event-score peak.
+t_focus,-0.740966796875,Time of the event-score peak.
+gps_focus,1187008881.2590332,GPS time of the event-score peak.
+s_event_peak,5.493083007039006,Peak value of the EM-constrained event score.
+sigma_gate_peak,5.496575779795786,Smoothed gate value at the event-score peak.
+focus_decay_status,crossed,Status of the event-score e-fold detection.
+event_start_time_s,-231.4892578125,Start time of the derived event window.
+event_end_time_s,230.00732421875,End time of the derived event window.
+event_rows,1890291,Number of rows inside the event window.
+lag_l1_samples,41,Best lag applied to L1 relative to H1 in samples.
+lag_v1_samples,41,Best lag applied to V1 relative to H1 in samples.
+lag_l1_s,0.010009765625,Best lag applied to L1 relative to H1 in seconds.
+lag_v1_s,0.010009765625,Best lag applied to V1 relative to H1 in seconds.
+rms_h1_event,5.8424400756247265e-18,Event-window RMS for aligned H1.
+rms_l1_event,3.803159785649361e-18,Event-window RMS for aligned L1.
+rms_v1_event,7.708847680682038e-19,Event-window RMS for aligned V1.
+eta_em,1.0,Derived EM-side structural-dimension scale factor.
+beta_reorg,1.0,Derived detector-side structural-dimension scale factor.
+tau_decay_alpha,48.548828125,Derived structural-dimension-gap e-fold decay time.
+kappa_alpha,0.020597819527698433,Derived relaxation rate 1/tau_decay_alpha.
+decay_status_alpha,crossed,Status of the structural-dimension-gap decay detection.
+sigma_gate_min,-6.2034585173151084,Minimum gate score.
+sigma_gate_max,0.4960166828041598,Maximum gate score.
+s_event_min,0.0,Minimum event score.
+s_event_max,5.493083007039006,Maximum event score.
+sigma_reorg_min,-14.200923498186935,Minimum reconstruction response inside the event window.
+sigma_reorg_max,6.792847916241424,Maximum reconstruction response inside the event window.
+alpha_src_proxy_min,3.0000000000039546,Minimum source-side structural-dimension proxy.
+alpha_src_proxy_max,3.9999999999953344,Maximum source-side structural-dimension proxy.
+alpha_det_proxy_min,1.999999999999,Minimum detector-side structural-dimension proxy.
+alpha_det_proxy_max,2.999999999999,Maximum detector-side structural-dimension proxy.
+sigma_alpha_min,0.00023631863834117084,Minimum structural-dimension-gap response inside the event window.
+sigma_alpha_max,1.9793796046008603,Maximum structural-dimension-gap response inside the event window.
+propagation_proxy_event_max,0.2707646465050857,Maximum absolute event-score propagation proxy.
+propagation_proxy_event_mean,0.002729272622845677,Mean absolute event-score propagation proxy.
+D_gw_mean,4.229843430911399e-18,Mean detector mismatch across the full window.
+D_gw_max,1.9816255326382994e-17,Maximum detector mismatch across the full window.
+postfocus_rmse_sigma_alpha,0.5046632279411878,RMSE between observed and modeled structural-dimension-gap response after focus.
+postfocus_mae_sigma_alpha,0.4864298634080018,MAE between observed and modeled structural-dimension-gap response after focus.

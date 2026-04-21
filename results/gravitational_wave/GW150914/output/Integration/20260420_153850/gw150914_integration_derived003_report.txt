@@ -1,0 +1,39 @@
+GW150914 integration report (derived_003 version)
+=================================================
+
+Purpose
+-------
+This integration stage compares the standard detector-baseline waveform and the fully derived topological local/envelope structure-response output without forcing them into the same observational status.
+
+Selected run folders
+--------------------
+standard_run_dir: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\standard
+topological_run_dir: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\topological\20260420_151919
+
+Interpretation
+--------------
+The waveform-vs-response plot shows the observed strain baseline in the upper panel and the derived local/envelope structural response in the lower panel.
+The post-peak relaxation plot isolates the envelope-based relaxation model after the derived envelope peak.
+The propagation-mismatch plot shows the envelope-based structural propagation proxy together with the envelope-normalized detector mismatch.
+
+Key copied metrics
+------------------
+standard_merged_peak_time_centered_s: 12.61669921875
+standard_merged_peak_abs_mean_strain: 1.183738246539846e-18
+standard_h1_l1_peak_time_offset_s: 2.79052734375
+topological_t_peak_env: 12.60693359375
+topological_E_peak: 1.183738246539846e-18
+topological_tau_decay_env: 0.000244140625
+topological_kappa_derived: 4096.0
+topological_baseline_window_s: 0.252333984375
+topological_envelope_window_s: 0.02001953125
+topological_postpeak_window_s: 0.2001953125
+topological_propagation_proxy_env_max: 228.8529080291878
+topological_detector_mismatch_env_max: 1.590609489091662
+topological_postpeak_rmse_sigma_env: 0.1837273485643787
+topological_postpeak_mae_sigma_env: 0.13733309401301774
+topological_decay_status_env: local_minimum_fallback
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\Integration\20260420_153850

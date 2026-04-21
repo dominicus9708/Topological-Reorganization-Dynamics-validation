@@ -1,0 +1,33 @@
+﻿metric,value,note
+row_count,131072,Number of rows in fully derived topological response table.
+sample_rate_hz,4096.0,Sample rate copied from input summary.
+t_peak_raw,12.61669921875,First-pass raw projected-amplitude peak time.
+A_peak_raw,1.183738246539846e-18,First-pass raw projected-amplitude peak.
+tau_decay_raw,0.0400390625,First-pass raw projected-amplitude e-fold decay time.
+decay_status_raw,crossed,Status of the raw first-pass decay detection.
+baseline_window_s,0.252333984375,Derived local baseline window in seconds.
+baseline_window_n,1034,Derived local baseline window in samples.
+envelope_window_s,0.02001953125,Derived envelope window in seconds.
+envelope_window_n,82,Derived envelope window in samples.
+postpeak_window_s,0.2001953125,Derived post-peak fitting window in seconds.
+postpeak_window_n,820,Derived post-peak fitting window in samples.
+A_floor,7.24489605606423e-20,Minimum positive projected amplitude.
+E_ref,6.83445737990747e-19,Pre-event median envelope baseline.
+epsilon_E,1.9710790668002793e-19,Minimum positive envelope used for safe normalization.
+t_peak_env,12.60693359375,Derived envelope peak time.
+E_peak,1.183738246539846e-18,Derived peak envelope amplitude.
+sigma_env_peak,0.5492854508883923,Envelope structural contrast at the peak.
+t_e_env,12.607177734375,Derived envelope e-fold decay crossing time.
+tau_decay_env,0.000244140625,Derived envelope e-fold decay time.
+kappa_derived,4096.0,Derived relaxation rate 1/tau_decay_env.
+decay_status_env,local_minimum_fallback,Status of the envelope decay detection.
+sigma_obs_local_min,-2.1607917921845887,Minimum local-baseline structural contrast.
+sigma_obs_local_max,0.7399189356005225,Maximum local-baseline structural contrast.
+sigma_env_min,-1.2433959361344715,Minimum envelope structural contrast.
+sigma_env_max,0.5492854508883923,Maximum envelope structural contrast.
+propagation_proxy_env_max,228.8529080291878,Maximum absolute envelope-based structural propagation proxy.
+propagation_proxy_env_mean,7.497610106312526,Mean absolute envelope-based structural propagation proxy.
+detector_mismatch_env_max,1.590609489091662,Maximum detector mismatch normalized by envelope.
+detector_mismatch_env_mean,0.9997621388540588,Mean detector mismatch normalized by envelope.
+postpeak_rmse_sigma_env,0.1837273485643787,RMSE between observed and modeled envelope sigma after the peak.
+postpeak_mae_sigma_env,0.13733309401301774,MAE between observed and modeled envelope sigma after the peak.

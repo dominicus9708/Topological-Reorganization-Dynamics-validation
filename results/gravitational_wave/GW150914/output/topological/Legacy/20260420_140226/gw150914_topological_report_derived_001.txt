@@ -1,0 +1,39 @@
+GW150914 topological report (derived-parameter version)
+======================================================
+
+Purpose
+-------
+This run derives the GW150914 structural-response quantities entirely from the observed mean detector strain baseline. No manual coefficients are introduced.
+
+Derived parameters
+------------------
+A_ref: 5.245120611586658e-19
+A_floor: 4.778920534123831e-22
+t_peak: 12.61669921875
+A_peak: 1.183738246539846e-18
+sigma_peak: 0.8139642923375622
+decay_threshold: 4.354729646303416e-19
+t_e: 12.656494140625
+tau_decay: 0.039794921875
+kappa_derived: 25.12883435582822
+decay_status: crossed
+
+Response summary
+----------------
+sigma_obs_min: -7.000838824783274
+sigma_obs_max: 0.8139642923375622
+propagation_proxy_max: 8433.361983223225
+propagation_proxy_mean: 108.7213810653725
+detector_mismatch_ratio_max: 1656.7536664520678
+detector_mismatch_ratio_mean: 2.428754086003438
+postpeak_rmse_sigma: 0.4348905847325644
+postpeak_mae_sigma: 0.2654034770376592
+
+Interpretation status
+---------------------
+The present output should be read as a structure-response quantity derived from the observed GW150914 waveform. It is not a direct full waveform replacement model.
+The main consistency question is whether the post-peak observed structural contrast can be represented by a derived exponential relaxation model with a non-arbitrary decay scale.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\topological\20260420_140226

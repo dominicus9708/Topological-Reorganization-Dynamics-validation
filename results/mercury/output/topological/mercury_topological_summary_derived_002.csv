@@ -1,0 +1,22 @@
+﻿metric,value,note
+elements_rows,13,Number of elements input rows.
+vectors_rows,73,Number of vectors rows in derived topological stage.
+a_reference_au,0.3870982322445338,Reference semi-major axis derived from baseline input.
+q_mean_au,0.30749666863698016,Mean element-based periapsis distance.
+ad_mean_au,0.4666997958520876,Mean element-based apoapsis distance.
+r_min_au,0.3075438577399671,Minimum vector radius.
+r_max_au,0.4666722865602122,Maximum vector radius.
+delta_q_au,4.7189102986955334e-05,Absolute mismatch |mean(QR)-min(R_AU)|.
+delta_ad_au,2.750929187539386e-05,Absolute mismatch |mean(AD)-max(R_AU)|.
+delta_r_au,4.7189102986955334e-05,Maximum baseline mismatch scale.
+epsilon_struct,0.00012190472354610368,Dimensionless structural mismatch scale delta_r/a_ref.
+sigma_raw_abs_max,0.23006078703663072,Maximum absolute unnormalized sigma_raw.
+beta_derived,4.346677297251783,Derived normalization coefficient for sigma.
+xi_cinfo2_derived,2.1439018653020865e-08,Derived structural scale from baseline mismatch.
+sigma_derived_min,-1.0,Minimum normalized structural contrast.
+sigma_derived_max,0.8126060116119593,Maximum normalized structural contrast.
+g_topological_abs_max,3.030088012137623e-07,Maximum absolute derived topological response acceleration.
+topo_to_newton_ratio_max,0.00014696413297959226,Maximum |g_topo|/|g_newton| in derived form.
+topo_to_newton_ratio_mean,0.00012526843127639916,Mean |g_topo|/|g_newton| in derived form.
+perihelion_like_date,A.D. 2026-Aug-14 00:00:00.0000,Date at minimum R_AU in derived topological vectors response.
+aphelion_like_date,A.D. 2026-Jan-06 00:00:00.0000,Date at maximum R_AU in derived topological vectors response.

@@ -1,0 +1,49 @@
+GW150914 topological report (fully derived version)
+==================================================
+
+Purpose
+-------
+This version derives not only the structural quantities but also the analysis windows from the event itself. It uses projected common amplitude, local baseline normalization, and envelope relaxation.
+
+Derived event scales
+--------------------
+t_peak_raw: 12.61669921875
+A_peak_raw: 1.183738246539846e-18
+tau_decay_raw: 0.0400390625
+decay_status_raw: crossed
+baseline_window_s: 0.252333984375
+baseline_window_n: 1034
+envelope_window_s: 0.02001953125
+envelope_window_n: 82
+postpeak_window_s: 0.2001953125
+postpeak_window_n: 820
+E_ref: 6.83445737990747e-19
+t_peak_env: 12.60693359375
+E_peak: 1.183738246539846e-18
+sigma_env_peak: 0.5492854508883923
+t_e_env: 12.607177734375
+tau_decay_env: 0.000244140625
+kappa_derived: 4096.0
+decay_status_env: local_minimum_fallback
+
+Response summary
+----------------
+sigma_obs_local_min: -2.1607917921845887
+sigma_obs_local_max: 0.7399189356005225
+sigma_env_min: -1.2433959361344715
+sigma_env_max: 0.5492854508883923
+propagation_proxy_env_max: 228.8529080291878
+propagation_proxy_env_mean: 7.497610106312526
+detector_mismatch_env_max: 1.590609489091662
+detector_mismatch_env_mean: 0.9997621388540588
+postpeak_rmse_sigma_env: 0.1837273485643787
+postpeak_mae_sigma_env: 0.13733309401301774
+
+Interpretation status
+---------------------
+The fully derived output should be read as a structure-response quantity derived from projected detector amplitudes, their event-derived local baseline, and their event-derived envelope organization.
+The main consistency question is whether this fully derived envelope-based construction improves the post-peak relaxation consistency and reduces spurious small-amplitude sensitivity.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\topological\20260420_151919

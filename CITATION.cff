@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "Topological Reorganization Dynamics and the Emergence of Information Propagation Constraints"
+message: "If you use this repository, please cite the associated paper and repository version."
+type: software
+authors:
+  - family-names: "Kwon"
+    given-names: "Dominicus"
+repository-code: "https://github.com/dominicus9708/Topological-Reorganization-Dynamics-validation"
+abstract: >
+  Validation repository for the paper
+  "Topological Reorganization Dynamics and the Emergence of Information Propagation Constraints".
+  This repository contains validation datasets, preprocessing outputs,
+  pipeline results, figures, and integration reports for the Mercury,
+  GW150914, and GW170817 validation cases.
+keywords:
+  - topological reorganization
+  - structural information propagation
+  - propagation constraints
+  - observer-dependent propagation
+  - effective structural dimension
+  - consistency-oriented validation
+license: "MIT"

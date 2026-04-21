@@ -1,0 +1,34 @@
+﻿detector_label,metric,value
+H1,Detector,H1
+H1,Duration,4096
+H1,GPSstart,1187006834
+H1,UTCstart,2017-08-17T12:06:56
+H1,Description,Strain data time series from LIGO
+H1,DescriptionURL,http://losc.ligo.org/
+H1,Type,StrainTimeSeries
+H1,Observatory,H
+H1,sample_count,16777216
+H1,sample_rate_hz,4096.0
+H1,dt_s,0.000244140625
+L1,Detector,L1
+L1,Duration,4096
+L1,GPSstart,1187006834
+L1,UTCstart,2017-08-17T12:06:56
+L1,Description,Strain data time series from LIGO
+L1,DescriptionURL,http://losc.ligo.org/
+L1,Type,StrainTimeSeries
+L1,Observatory,L
+L1,sample_count,16777216
+L1,sample_rate_hz,4096.0
+L1,dt_s,0.000244140625
+V1,Detector,V1
+V1,Duration,4096
+V1,GPSstart,1187006834
+V1,UTCstart,2017-08-17T12:06:56
+V1,Description,Strain data time series from Virgo
+V1,DescriptionURL,http://losc.ligo.org/
+V1,Type,StrainTimeSeries
+V1,Observatory,V
+V1,sample_count,16777216
+V1,sample_rate_hz,4096.0
+V1,dt_s,0.000244140625

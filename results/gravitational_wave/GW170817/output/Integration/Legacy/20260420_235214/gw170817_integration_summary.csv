@@ -1,0 +1,8 @@
+﻿field,value
+standard_dir,C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW170817\output\standard
+topological_dir,C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW170817\output\topological
+integration_window_start_s,-291.4892578125
+integration_window_end_s,290.00732421875
+standard_window_rows,2381811
+topological_window_rows,2381811
+smooth_window_s,10.0

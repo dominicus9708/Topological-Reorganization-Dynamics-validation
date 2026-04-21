@@ -1,0 +1,44 @@
+﻿metric,value,note
+row_count,16777216,Number of rows in GW170817 topological response table.
+sample_rate_hz,4096.0,Sample rate copied from input summary.
+duration_s,4096.0,Duration copied from input summary.
+gps_start,1187006834.0,GPS start copied from input summary.
+baseline_window_s,102.4,Derived local baseline window in seconds.
+baseline_window_n,419430,Derived local baseline window in samples.
+focus_window_s,10.24,Derived GW-focus smoothing window in seconds.
+focus_window_n,41943,Derived GW-focus smoothing window in samples.
+lambda_D,0.6289151639054508,Derived detector-mismatch penalty weight.
+t_em,0.40000009536743164,EM-proxy center in the current centered-time axis.
+tau_em,8.0,EM-proxy tolerance width in seconds.
+tau_focus,2041.166015625,Derived event-score e-fold timescale.
+event_half_window_s,10205.830078125,Half-width of derived event window in seconds.
+event_half_window_n,41803080,Half-width of derived event window in samples.
+envelope_window_s,2041.166015625,Derived event-envelope window in seconds.
+envelope_window_n,8360616,Derived event-envelope window in samples.
+A_floor,4.816574856052981e-21,Minimum positive detector-common GW amplitude.
+E_ref,,Reference amplitude from outside the event window.
+E_floor,8.346987202672474e-18,Minimum positive event-envelope amplitude.
+focus_idx,0,Sample index of the event-score peak.
+t_focus,-2048.0,Time of the event-score peak.
+gps_focus,1187006834.0,GPS time of the event-score peak.
+s_event_peak,-0.0,Peak value of the EM-constrained event score.
+sigma_gw_focus_peak,-0.8078050781798152,Smoothed GW-focus value at the event-score peak.
+focus_decay_status,crossed,Status of the event-score e-fold detection.
+event_start_time_s,-2048.0,Start time of the derived event window.
+event_end_time_s,2047.999755859375,End time of the derived event window.
+event_rows,16777216,Number of rows inside the event window.
+tau_decay_env,0.000244140625,Derived event-envelope e-fold decay time.
+kappa_derived,4096.0,Derived relaxation rate 1/tau_decay_env.
+decay_status_env,local_minimum_fallback,Status of the event-envelope decay detection.
+sigma_gw_focus_min,-6.2034585173151084,Minimum raw GW-focus score.
+sigma_gw_focus_max,0.4960166828041598,Maximum raw GW-focus score.
+s_event_min,-0.7726572091112262,Minimum EM-constrained event score.
+s_event_max,-0.0,Maximum EM-constrained event score.
+sigma_env_min,,Minimum event-envelope response value.
+sigma_env_max,,Maximum event-envelope response value.
+propagation_proxy_event_max,0.16561102807963834,Maximum absolute event-score propagation proxy.
+propagation_proxy_event_mean,0.0004113108058331308,Mean absolute event-score propagation proxy.
+D_gw_mean,4.229843430911399e-18,Mean detector mismatch across the full window.
+D_gw_max,1.9816255326382994e-17,Maximum detector mismatch across the full window.
+postfocus_rmse_sigma_env,,RMSE between observed and modeled event-envelope response after focus.
+postfocus_mae_sigma_env,,MAE between observed and modeled event-envelope response after focus.

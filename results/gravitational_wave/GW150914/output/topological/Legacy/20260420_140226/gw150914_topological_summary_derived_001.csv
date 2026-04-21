@@ -1,0 +1,20 @@
+﻿metric,value,note
+row_count,131072,Number of rows in topological response table.
+A_ref,5.245120611586658e-19,Pre-event median structural amplitude baseline.
+A_floor,4.778920534123831e-22,Minimum positive structural amplitude used for safe logarithm.
+t_peak,12.61669921875,Derived peak time from A(t)=|h_mean(t)|.
+A_peak,1.183738246539846e-18,Derived peak structural amplitude.
+sigma_peak,0.8139642923375622,Observed structural contrast at the peak.
+decay_threshold,4.354729646303416e-19,e-fold threshold A_peak/e.
+t_e,12.656494140625,"First post-peak time where A(t)<=A_peak/e, if available."
+tau_decay,0.039794921875,Derived post-peak e-fold decay time.
+kappa_derived,25.12883435582822,Derived structural relaxation rate 1/tau_decay.
+decay_status,crossed,Status of the e-fold threshold crossing.
+sigma_obs_min,-7.000838824783274,Minimum observed structural contrast.
+sigma_obs_max,0.8139642923375622,Maximum observed structural contrast.
+propagation_proxy_max,8433.361983223225,Maximum absolute structural-contrast time derivative.
+propagation_proxy_mean,108.7213810653725,Mean absolute structural-contrast time derivative.
+detector_mismatch_ratio_max,1656.7536664520678,Maximum detector mismatch ratio |H1-L1|/A_safe.
+detector_mismatch_ratio_mean,2.428754086003438,Mean detector mismatch ratio |H1-L1|/A_safe.
+postpeak_rmse_sigma,0.4348905847325644,RMSE between observed and modeled sigma after the peak.
+postpeak_mae_sigma,0.2654034770376592,MAE between observed and modeled sigma after the peak.

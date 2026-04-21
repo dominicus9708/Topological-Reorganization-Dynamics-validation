@@ -1,0 +1,68 @@
+GW170817 topological report (004)
+================================
+
+Purpose
+-------
+This version reinterprets the GW170817 response in terms of a local effective structural-dimension gap. The source-side proxy is constrained by the EM event proxy, while the detector-side proxy is constructed from the aligned common waveform proxy and its reconstruction residual.
+
+Event selection layer
+---------------------
+sample_rate_hz: 4096.0
+duration_s: 4096.0
+gps_start: 1187006834.0
+baseline_window_s: 102.4
+focus_window_s: 10.24
+lambda_D: 0.6289151639054508
+t_em: 0.40000009536743164
+tau_em: 32.0
+tau_focus: 46.149658203125
+min_event_half_window_s: 32.0
+event_half_window_s: 230.748291015625
+t_focus: -0.740966796875
+gps_focus: 1187008881.2590332
+s_event_peak: 5.493083007039006
+sigma_gate_peak: 5.496575779795786
+focus_decay_status: crossed
+event_start_time_s: -231.4892578125
+event_end_time_s: 230.00732421875
+event_rows: 1890291
+
+Reconstruction and structural-dimension layer
+----------------------------------------------
+lag_l1_samples: 41
+lag_v1_samples: 41
+lag_l1_s: 0.010009765625
+lag_v1_s: 0.010009765625
+rms_h1_event: 5.8424400756247265e-18
+rms_l1_event: 3.803159785649361e-18
+rms_v1_event: 7.708847680682038e-19
+eta_em: 1.0
+beta_reorg: 1.0
+sigma_reorg_min: -14.200923498186935
+sigma_reorg_max: 6.792847916241424
+alpha_src_proxy_min: 3.0000000000039546
+alpha_src_proxy_max: 3.9999999999953344
+alpha_det_proxy_min: 1.999999999999
+alpha_det_proxy_max: 2.999999999999
+sigma_alpha_min: 0.00023631863834117084
+sigma_alpha_max: 1.9793796046008603
+
+Relaxation layer
+----------------
+tau_decay_alpha: 48.548828125
+kappa_alpha: 0.020597819527698433
+decay_status_alpha: crossed
+propagation_proxy_event_max: 0.2707646465050857
+propagation_proxy_event_mean: 0.002729272622845677
+D_gw_mean: 4.229843430911399e-18
+D_gw_max: 1.9816255326382994e-17
+postfocus_rmse_sigma_alpha: 0.5046632279411878
+postfocus_mae_sigma_alpha: 0.4864298634080018
+
+Interpretation status
+---------------------
+This topological stage should be read as a local effective structural-dimension model: the event window is selected first, then source-side and detector-side structural-dimension proxies are contrasted through sigma_alpha.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW170817\output\topological\20260420_204134

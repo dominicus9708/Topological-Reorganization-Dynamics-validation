@@ -1,0 +1,8 @@
+﻿metric,standard_value,topological_value,note
+event_centered_time,-1750.9765625,-0.740966796875,Standard merged peak time versus topological focus time.
+event_gps_time,1187007131.0234375,1187008881.2590332,Standard peak GPS time versus topological focus GPS time.
+event_window_half_width_s,,230.748291015625,Topological event-window half-width; no direct standard counterpart.
+topological_decay_tau_s,,48.548828125,Decay timescale of structural-dimension-gap response.
+topological_decay_kappa,,0.020597819527698433,Decay rate of structural-dimension-gap response.
+topological_postfocus_rmse,,0.5046632279411878,Post-focus RMSE of structural-dimension-gap response.
+topological_postfocus_mae,,0.4864298634080018,Post-focus MAE of structural-dimension-gap response.

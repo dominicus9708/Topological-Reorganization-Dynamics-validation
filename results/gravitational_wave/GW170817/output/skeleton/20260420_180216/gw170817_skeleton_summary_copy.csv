@@ -1,0 +1,32 @@
+﻿metric,value,note
+h1_rows,16777216.0,Number of rows in H1 input.
+h1_sample_rate_hz,4096.0,H1 sample rate from metadata.
+h1_duration_s,4096.0,H1 duration from metadata.
+h1_gps_start,1187006834.0,H1 GPS start from metadata.
+l1_rows,16777216.0,Number of rows in L1 input.
+l1_sample_rate_hz,4096.0,L1 sample rate from metadata.
+l1_duration_s,4096.0,L1 duration from metadata.
+l1_gps_start,1187006834.0,L1 GPS start from metadata.
+v1_rows,16777216.0,Number of rows in V1 input.
+v1_sample_rate_hz,4096.0,V1 sample rate from metadata.
+v1_duration_s,4096.0,V1 duration from metadata.
+v1_gps_start,1187006834.0,V1 GPS start from metadata.
+merged_rows,16777216.0,Number of rows in merged input.
+h1_peak_time_centered_s,-1408.764892578125,Peak time of maximum absolute H1 strain.
+l1_peak_time_centered_s,179.401611328125,Peak time of maximum absolute L1 strain.
+v1_peak_time_centered_s,1235.94775390625,Peak time of maximum absolute V1 strain.
+merged_peak_time_centered_s,-1750.9765625,"Peak time of maximum absolute mean(H1,L1,V1) strain."
+h1_peak_abs_strain,2.023921779902421e-17,Maximum absolute H1 strain.
+l1_peak_abs_strain,1.4536235516127274e-17,Maximum absolute L1 strain.
+v1_peak_abs_strain,8.552819052931648e-18,Maximum absolute V1 strain.
+merged_peak_abs_mean_strain,8.839843184280062e-18,"Maximum absolute mean(H1,L1,V1) strain."
+h1_strain_std,5.501067455613212e-18,Standard deviation of H1 strain.
+l1_strain_std,3.655498821631781e-18,Standard deviation of L1 strain.
+v1_strain_std,8.760007340401246e-19,Standard deviation of V1 strain.
+merged_mean_strain_std,2.2093657778202654e-18,"Standard deviation of mean(H1,L1,V1) strain."
+mean_abs_diff_h1_l1,5.262442184790519e-18,Mean absolute detector difference |H1-L1|.
+mean_abs_diff_h1_v1,4.429324364398147e-18,Mean absolute detector difference |H1-V1|.
+mean_abs_diff_l1_v1,2.997763743545531e-18,Mean absolute detector difference |L1-V1|.
+max_abs_diff_h1_l1,2.972438298957449e-17,Maximum absolute detector difference |H1-L1|.
+max_abs_diff_h1_v1,2.2276774699252413e-17,Maximum absolute detector difference |H1-V1|.
+max_abs_diff_l1_v1,1.6030439697155722e-17,Maximum absolute detector difference |L1-V1|.

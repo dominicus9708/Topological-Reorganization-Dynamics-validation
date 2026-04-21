@@ -1,0 +1,4 @@
+﻿source_id,title,url,category,filename,note
+gw150914_metadata_v4,GW150914 event metadata (GWOSC API v2),https://gwosc.org/api/v2/event-versions/GW150914-v4?format=api,metadata,GW150914_event_metadata_v4.json,Official GWOSC event detail endpoint for GW150914.
+gw150914_strain_h1_32s_4khz,GW150914 H1 32-second 4 kHz strain file,https://gwosc.org/eventapi/json/GWTC-1-confident/GW150914/v3/H-H1_GWOSC_4KHZ_R1-1126259447-32.hdf5,strain,H-H1_GWOSC_4KHZ_R1-1126259447-32.hdf5,GWOSC event strain file for detector H1.
+gw150914_strain_l1_32s_4khz,GW150914 L1 32-second 4 kHz strain file,https://gwosc.org/eventapi/json/GWTC-1-confident/GW150914/v3/L-L1_GWOSC_4KHZ_R1-1126259447-32.hdf5,strain,L-L1_GWOSC_4KHZ_R1-1126259447-32.hdf5,GWOSC event strain file for detector L1.

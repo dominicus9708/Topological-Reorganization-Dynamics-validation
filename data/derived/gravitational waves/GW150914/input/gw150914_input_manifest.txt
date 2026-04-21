@@ -1,0 +1,12 @@
+GW150914 input manifest
+======================
+
+h1_input_rows: 131072
+l1_input_rows: 131072
+merged_input_rows: 131072
+summary_rows: 17
+
+h1_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW150914\input\gw150914_h1_input_4khz_32s.csv
+l1_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW150914\input\gw150914_l1_input_4khz_32s.csv
+merged_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW150914\input\gw150914_h1_l1_input_4khz_32s.csv
+summary_out: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW150914\input\gw150914_event_summary_input.csv

@@ -1,0 +1,16 @@
+﻿metric,value,note
+elements_rows,13,Number of elements input rows.
+vectors_rows,73,Number of vectors input rows.
+mean_eccentricity,0.20563659809836388,Mean eccentricity from elements baseline.
+mean_semi_major_axis_au,0.3870982322445338,Mean semi-major axis from elements baseline.
+mean_sidereal_period_day,87.96910488030898,Mean sidereal period from elements baseline.
+mean_periapsis_distance_qr_au,0.30749666863698016,Mean periapsis distance QR from elements baseline.
+mean_apoapsis_distance_ad_au,0.4666997958520876,Mean apoapsis distance AD from elements baseline.
+min_radius_au,0.3075438577399671,Minimum vector radius; date=A.D. 2026-Aug-14 00:00:00.0000
+max_radius_au,0.4666722865602122,Maximum vector radius; date=A.D. 2026-Jan-06 00:00:00.0000
+min_speed_au_per_day,0.0224442377086393,Minimum vector speed.
+max_speed_au_per_day,0.0340575998200046,Maximum vector speed.
+perihelion_like_date,A.D. 2026-Aug-14 00:00:00.0000,Date at minimum vector radius.
+aphelion_like_date,A.D. 2026-Jan-06 00:00:00.0000,Date at maximum vector radius.
+periapsis_vs_min_radius_abs_diff_au,4.7189102986955334e-05,Absolute difference between mean QR and vector min radius.
+apoapsis_vs_max_radius_abs_diff_au,2.750929187539386e-05,Absolute difference between mean AD and vector max radius.

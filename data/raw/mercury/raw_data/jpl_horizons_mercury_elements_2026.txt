@@ -1,0 +1,136 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+*******************************************************************************
+ Revised: April 12, 2021             Mercury                            199 / 1
+
+ PHYSICAL DATA (updated 2024-Mar-04):
+  Vol. Mean Radius (km) =  2439.4+-0.1    Density (g cm^-3)     = 5.427
+  Mass x10^23 (kg)      =     3.302       Volume (x10^10 km^3)  = 6.085  
+  Sidereal rot. period  =    58.6463 d    Sid. rot. rate (rad/s)= 0.00000124001
+  Mean solar day        =   175.9421 d    Core radius (km)      = ~1600 
+  Geometric Albedo      =     0.106       Surface emissivity    = 0.77+-0.06
+  GM (km^3/s^2)         = 22031.86855     Equatorial radius, Re = 2440.53 km
+  GM 1-sigma (km^3/s^2) =                 Mass ratio (Sun/plnt) = 6023682
+  Mom. of Inertia       =     0.33        Equ. gravity  m/s^2   = 3.701     
+  Atmos. pressure (bar) = < 5x10^-15      Max. angular diam.    = 11.0"   
+  Mean Temperature (K)  = 440             Visual mag. V(1,0)    = -0.42 
+  Obliquity to orbit[1] =  2.11' +/- 0.1' Hill's sphere rad. Rp = 94.4 
+  Sidereal orb. per.    =  0.2408467 y    Mean Orbit vel.  km/s = 47.362 
+  Sidereal orb. per.    = 87.969257  d    Escape vel. km/s      =  4.435
+                                 Perihelion  Aphelion    Mean
+  Solar Constant (W/m^2)         14462       6278        9126
+  Maximum Planetary IR (W/m^2)   12700       5500        8000
+  Minimum Planetary IR (W/m^2)   6           6           6
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Sun Apr 19 17:08:32 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Mercury (199)                   {source: DE441}
+Center body name: Sun (10)                        {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2026-Jan-01 00:00:00.0000 TDB
+Stop  time      : A.D. 2026-Dec-31 00:00:00.0000 TDB
+Step-size       : 43200 minutes
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 695700.0, 695700.0, 695700.0 km {Equator_a, b, pole_c}
+Keplerian GM    : 2.9591225740912142E-04 au^3/d^2
+Output units    : AU-D, deg, Julian Day Number (Tp)
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : GEOMETRIC osculating elements
+Output format   : 10
+Reference frame : Ecliptic of J2000.0
+*******************************************************************************
+            JDTDB,            Calendar Date (TDB),                     EC,                     QR,                     IN,                     OM,                      W,                     Tp,                      N,                     MA,                     TA,                      A,                     AD,                     PR,
+**************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+$$SOE
+2461041.500000000, A.D. 2026-Jan-01 00:00:00.0000,  2.056426160956197E-01,  3.074942327953067E-01,  7.003422810415504E+00,  4.829881667444637E+01,  2.919881272328852E+01,  2.461002976599744E+06,  4.092347957156075E+00,  1.576511583424542E+02,  1.648633974616086E+02,  3.870980984452220E-01,  4.667019640951371E-01,  8.796905927084886E+01,
+2461071.500000000, A.D. 2026-Jan-31 00:00:00.0000,  2.056334500308120E-01,  3.074989026799672E-01,  7.003383926651307E+00,  4.829825464414137E+01,  2.920024605115199E+01,  2.461090946304754E+06,  4.092325564598952E+00,  2.804193899191193E+02,  2.568064747775771E+02,  3.870995105369108E-01,  4.667001183938544E-01,  8.796954062360383E+01,
+2461101.500000000, A.D. 2026-Mar-02 00:00:00.0000,  2.056333007818391E-01,  3.074984457421485E-01,  7.003386900203803E+00,  4.829813462474848E+01,  2.920107398276521E+01,  2.461090946428805E+06,  4.092335839626750E+00,  4.318875763703819E+01,  6.260639295624807E+01,  3.870988625842416E-01,  4.666992794263346E-01,  8.796931974987530E+01,
+2461131.500000000, A.D. 2026-Apr-01 00:00:00.0000,  2.056345420368931E-01,  3.074979053876993E-01,  7.003393135029971E+00,  4.829804810693359E+01,  2.920104927324113E+01,  2.461090946446900E+06,  4.092337034717382E+00,  1.659588072408919E+02,  1.705242805282045E+02,  3.870987872209072E-01,  4.666996690541152E-01,  8.796929406007777E+01,
+2461161.500000000, A.D. 2026-May-01 00:00:00.0000,  2.056334774195941E-01,  3.074980801359266E-01,  7.003385052271335E+00,  4.829791447232630E+01,  2.920171705065792E+01,  2.461178915905016E+06,  4.092341773151904E+00,  2.887281643885796E+02,  2.651062940023132E+02,  3.870984884119428E-01,  4.666988966879591E-01,  8.796919220232419E+01,
+2461191.500000000, A.D. 2026-May-31 00:00:00.0000,  2.056352916060463E-01,  3.074977977268309E-01,  7.003383323744332E+00,  4.829781622270480E+01,  2.920197455426593E+01,  2.461178915938943E+06,  4.092333391584768E+00,  5.149817326750229E+01,  7.290191876774243E+01,  3.870990169597663E-01,  4.667002361927018E-01,  8.796937237329749E+01,
+2461221.500000000, A.D. 2026-Jun-30 00:00:00.0000,  2.056379577261022E-01,  3.074959305468284E-01,  7.003388159306787E+00,  4.829769611125293E+01,  2.920122096814868E+01,  2.461178915868736E+06,  4.092350063135540E+00,  1.742691722668433E+02,  1.761401430605408E+02,  3.870979656412172E-01,  4.667000007356060E-01,  8.796901400076456E+01,
+2461251.500000000, A.D. 2026-Jul-30 00:00:00.0000,  2.056365779554684E-01,  3.074962170724733E-01,  7.003372686992685E+00,  4.829743623629873E+01,  2.920204300518367E+01,  2.461266885058024E+06,  4.092355005573633E+00,  2.970388807852945E+02,  2.739405824978612E+02,  3.870976539693129E-01,  4.666990908661525E-01,  8.796890775841626E+01,
+2461281.500000000, A.D. 2026-Aug-29 00:00:00.0000,  2.056381634257297E-01,  3.074959077900927E-01,  7.003370365465199E+00,  4.829736036747763E+01,  2.920190099379821E+01,  2.461266885029573E+06,  4.092348927859224E+00,  5.980955855743331E+01,  8.255864804605658E+01,  3.870980372322340E-01,  4.667001666743754E-01,  8.796903840463133E+01,
+2461311.500000000, A.D. 2026-Sep-28 00:00:00.0000,  2.056390974790587E-01,  3.074949254864514E-01,  7.003375758930671E+00,  4.829731502383911E+01,  2.920132661592412E+01,  2.461354853721778E+06,  4.092361319571391E+00,  1.825809059357372E+02,  1.817377591801768E+02,  3.870972558072809E-01,  4.666995861281105E-01,  8.796877203347827E+01,
+2461341.500000000, A.D. 2026-Oct-28 00:00:00.0000,  2.056384021971371E-01,  3.074955823477308E-01,  7.003372995635567E+00,  4.829721543359175E+01,  2.920110867598163E+01,  2.461354853696968E+06,  4.092353579518671E+00,  3.053519504114447E+02,  2.833642090272062E+02,  3.870977438967816E-01,  4.666999054458325E-01,  8.796893841278053E+01,
+2461371.500000000, A.D. 2026-Nov-27 00:00:00.0000,  2.056374340222549E-01,  3.074957541041799E-01,  7.003369343772660E+00,  4.829715174933757E+01,  2.920048222485605E+01,  2.461354853593990E+06,  4.092357632439938E+00,  6.812304668860791E+01,  9.161261607100552E+01,  3.870974883184446E-01,  4.666992225327095E-01,  8.796885129156257E+01,
+2461401.500000000, A.D. 2026-Dec-27 00:00:00.0000,  2.056354645021758E-01,  3.074970104651061E-01,  7.003363258667942E+00,  4.829712088486468E+01,  2.920067057110619E+01,  2.461442822600404E+06,  4.092347771469942E+00,  1.908935483268057E+02,  1.873446281859696E+02,  3.870981101546778E-01,  4.666992098442493E-01,  8.796906326235575E+01,
+$$EOE
+**************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+ 
+TIME
+
+  Barycentric Dynamical Time ("TDB" or T_eph) output was requested. This
+continuous coordinate time is equivalent to the relativistic proper time
+of a clock at rest in a reference frame co-moving with the solar system
+barycenter but outside the system's gravity well. It is the independent
+variable in the solar system relativistic equations of motion.
+
+  TDB runs at a uniform rate of one SI second per second and is independent
+of irregularities in Earth's rotation.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  Ecliptic at the standard reference epoch
+
+    Reference epoch: J2000.0
+    X-Y plane: adopted Earth orbital plane at the reference epoch
+               Note: IAU76 obliquity of 84381.448 arcseconds wrt ICRF X-Y plane
+    X-axis   : ICRF
+    Z-axis   : perpendicular to the X-Y plane in the directional (+ or -) sense
+               of Earth's north pole at the reference epoch.
+
+  Symbol meaning [1 au= 149597870.700 km, 1 day= 86400.0 s]:
+
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      EC     Eccentricity, e
+      QR     Periapsis distance, q (au)
+      IN     Inclination w.r.t X-Y plane, i (degrees)
+      OM     Longitude of Ascending Node, OMEGA, (degrees)
+      W      Argument of Perifocus, w (degrees)
+      Tp     Time of periapsis (Julian Day Number)
+      N      Mean motion, n (degrees/day)
+      MA     Mean anomaly, M (degrees)
+      TA     True anomaly, nu (degrees)
+      A      Semi-major axis, a (au)
+      AD     Apoapsis distance (au)
+      PR     Sidereal orbit period (day)
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric osculating elements have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Author      : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************

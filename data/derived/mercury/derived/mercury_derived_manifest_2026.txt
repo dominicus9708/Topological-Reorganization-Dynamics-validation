@@ -1,0 +1,14 @@
+Mercury derived manifest
+=======================
+
+elements_rows: 13
+vector_rows: 73
+merged_rows: 13
+
+elements_first_date: A.D. 2026-Jan-01 00:00:00.0000
+elements_last_date: A.D. 2026-Dec-27 00:00:00.0000
+vectors_first_date: A.D. 2026-Jan-01 00:00:00.0000
+vectors_last_date: A.D. 2026-Dec-27 00:00:00.0000
+
+min_R_AU: 0.307543857740
+max_R_AU: 0.466672286560

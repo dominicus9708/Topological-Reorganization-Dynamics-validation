@@ -1,0 +1,12 @@
+﻿metric,value,note
+elements_rows,13,Number of rows in cleaned elements input.
+vectors_rows,73,Number of rows in cleaned vectors input.
+mean_eccentricity,0.20563659809836388,Mean eccentricity across 2026 elements rows.
+mean_semi_major_axis_au,0.3870982322445338,Mean semi-major axis across 2026 elements rows.
+mean_sidereal_period_day,87.96910488030898,Mean sidereal period across 2026 elements rows.
+min_radius_au,0.3075438577399671,Minimum Sun-Mercury distance from vectors; date=A.D. 2026-Mar-02 00:00:00.0000
+max_radius_au,0.4666722865602122,Maximum Sun-Mercury distance from vectors; date=A.D. 2026-Sep-28 00:00:00.0000
+perihelion_like_date,A.D. 2026-Mar-02 00:00:00.0000,Date associated with minimum R_AU in merged data.
+aphelion_like_date,A.D. 2026-Sep-28 00:00:00.0000,Date associated with maximum R_AU in merged data.
+perihelion_like_argument_of_perifocus_deg,29.20107398276521,Argument of perifocus at perihelion-like date from merged data.
+aphelion_like_argument_of_perifocus_deg,29.20132661592412,Argument of perifocus at aphelion-like date from merged data.

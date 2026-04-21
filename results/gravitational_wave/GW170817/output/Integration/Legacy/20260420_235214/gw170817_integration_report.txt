@@ -1,0 +1,32 @@
+GW170817 standard-topological integration report (002)
+=====================================================
+
+Standard folder: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW170817\output\standard
+Topological folder: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW170817\output\topological
+
+Comparison window
+-----------------
+window_start_s: -291.4892578125
+window_end_s: 290.00732421875
+smooth_window_s: 10.0
+
+Key comparison notes
+--------------------
+standard_peak_time_centered_s: -1750.9765625
+standard_peak_gps_time: 1187007131.0234375
+topological_t_focus: -0.740966796875
+topological_gps_focus: 1187008881.2590332
+topological_event_half_window_s: 230.748291015625
+topological_tau_decay_alpha: 48.548828125
+topological_postfocus_rmse_sigma_alpha: 0.5046632279411878
+topological_postfocus_mae_sigma_alpha: 0.4864298634080018
+
+Generated files
+---------------
+gw170817_metric_comparison.csv
+gw170817_integration_summary.csv
+gw170817_event_selection_comparison.png
+gw170817_reconstruction_comparison.png
+gw170817_response_model_comparison.png
+gw170817_time_scale_bars.png
+gw170817_error_bars.png

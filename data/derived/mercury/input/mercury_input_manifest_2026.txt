@@ -1,0 +1,17 @@
+Mercury input manifest
+=====================
+
+elements_input_rows: 13
+vectors_input_rows: 73
+
+elements_input_file: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\mercury\input\mercury_elements_input_2026.csv
+vectors_input_file: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\mercury\input\mercury_vectors_input_2026.csv
+summary_input_file: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\mercury\input\mercury_orbit_summary_input_2026.csv
+
+mean_eccentricity: 0.205636598098364
+mean_semi_major_axis_au: 0.387098232244534
+mean_sidereal_period_day: 87.969104880308976
+min_radius_au: 0.307543857739967
+max_radius_au: 0.466672286560212
+perihelion_like_date: A.D. 2026-Mar-02 00:00:00.0000
+aphelion_like_date: A.D. 2026-Sep-28 00:00:00.0000

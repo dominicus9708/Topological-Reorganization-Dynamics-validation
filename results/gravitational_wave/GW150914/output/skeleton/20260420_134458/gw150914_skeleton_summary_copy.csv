@@ -1,0 +1,18 @@
+﻿metric,value,note
+h1_rows,131072.0,Number of rows in H1 input.
+l1_rows,131072.0,Number of rows in L1 input.
+merged_rows,131072.0,Number of rows in merged input.
+gps_start,1126259447.0,Detector GPS start from metadata.
+h1_sample_rate_hz,4096.0,H1 sample rate from metadata.
+l1_sample_rate_hz,4096.0,L1 sample rate from metadata.
+h1_duration_s,32.0,H1 duration from metadata.
+l1_duration_s,32.0,L1 duration from metadata.
+h1_peak_time_centered_s,3.9697265625,Time-centered coordinate of maximum absolute H1 strain.
+l1_peak_time_centered_s,6.76025390625,Time-centered coordinate of maximum absolute L1 strain.
+merged_peak_time_centered_s,12.61669921875,"Time-centered coordinate of maximum absolute mean(H1,L1) strain."
+h1_peak_abs_strain,7.706262192395323e-19,Maximum absolute H1 strain.
+l1_peak_abs_strain,1.8697138664246853e-18,Maximum absolute L1 strain.
+merged_peak_abs_mean_strain,1.183738246539846e-18,"Maximum absolute mean(H1,L1) strain."
+h1_strain_std,2.1808773917471215e-19,Standard deviation of H1 strain.
+l1_strain_std,2.308982813316006e-19,Standard deviation of L1 strain.
+merged_mean_strain_std,1.5917059611796401e-19,"Standard deviation of mean(H1,L1) strain."

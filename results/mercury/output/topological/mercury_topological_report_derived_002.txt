@@ -1,0 +1,36 @@
+Mercury topological report (derived-parameter version)
+=====================================================
+
+Purpose
+-------
+This run removes manual trial coefficients and derives all topological response scales from the Mercury baseline itself. The output remains a structure-response quantity rather than a closed perihelion-advance reconstruction.
+
+Derived parameters
+------------------
+a_reference_au: 0.387098232244534
+delta_q_au: 0.000047189102987
+delta_ad_au: 0.000027509291875
+delta_r_au: 0.000047189102987
+epsilon_struct: 1.219047235461037e-04
+sigma_raw_abs_max: 0.230060787036631
+beta_derived: 4.346677297251783
+xi_cinfo2_derived: 2.143901865302086e-08
+
+Response summary
+----------------
+sigma_derived_min: -1.000000000000000
+sigma_derived_max: 0.812606011611959
+g_topological_abs_max: 3.030088012137623e-07
+topo_to_newton_ratio_max: 1.469641329795923e-04
+topo_to_newton_ratio_mean: 1.252684312763992e-04
+perihelion_like_date: A.D. 2026-Aug-14 00:00:00.0000
+aphelion_like_date: A.D. 2026-Jan-06 00:00:00.0000
+
+Interpretation status
+---------------------
+The structural response scale is now anchored to the internal mismatch between the element-based periapsis/apoapsis distances and the vector-based minimum/maximum orbital radius. Accordingly, the remaining free response scales are data-derived rather than manually imposed.
+The main consistency question remains whether the derived structural term stays subleading relative to the Newtonian weak-field baseline while still yielding a nonzero, traceable response.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\topological\20260420_115347

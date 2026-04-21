@@ -1,0 +1,33 @@
+Mercury standard report
+======================
+
+Purpose
+-------
+This is the standard baseline stage for the Mercury validation case. It does not introduce any topological correction term. Its role is to preserve the prepared input and summarize the ordinary orbital baseline in a reproducible weak-field form.
+
+Baseline status
+---------------
+elements_rows: 13
+vectors_rows: 73
+mean_eccentricity: 0.205636598098364
+mean_semi_major_axis_au: 0.387098232244534
+mean_sidereal_period_day: 87.969104880308976
+mean_periapsis_distance_qr_au: 0.307496668636980
+mean_apoapsis_distance_ad_au: 0.466699795852088
+min_radius_au: 0.307543857739967
+max_radius_au: 0.466672286560212
+min_speed_au_per_day: 0.022444237708639
+max_speed_au_per_day: 0.034057599820005
+perihelion_like_date: A.D. 2026-Aug-14 00:00:00.0000
+aphelion_like_date: A.D. 2026-Jan-06 00:00:00.0000
+
+Consistency notes
+-----------------
+The standard stage treats Mercury as a weak-field orbital baseline with stable eccentric motion. The purpose is not to reconstruct the century-scale anomalous perihelion advance, but to preserve an ordinary orbital reference against which later interpretation may be compared.
+The differences between mean element-based periapsis/apoapsis distances and vector-based minimum/maximum radius are expected to remain small at this baseline level.
+periapsis_vs_min_radius_abs_diff_au: 0.000047189102987
+apoapsis_vs_max_radius_abs_diff_au: 0.000027509291875
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\mercury\output\standard\20260420_113658

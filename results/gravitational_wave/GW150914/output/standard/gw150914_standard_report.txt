@@ -1,0 +1,34 @@
+GW150914 standard report
+=======================
+
+Purpose
+-------
+This is the standard baseline stage for the GW150914 validation case. It preserves the ordinary detector strain baseline without introducing any topological correction term.
+
+Baseline status
+---------------
+h1_rows: 131072.0
+l1_rows: 131072.0
+merged_rows: 131072.0
+h1_sample_rate_hz: 4096.0
+l1_sample_rate_hz: 4096.0
+h1_peak_time_centered_s: 3.9697265625
+l1_peak_time_centered_s: 6.76025390625
+merged_peak_time_centered_s: 12.61669921875
+h1_peak_abs_strain: 7.706262192395323e-19
+l1_peak_abs_strain: 1.8697138664246853e-18
+merged_peak_abs_mean_strain: 1.183738246539846e-18
+h1_strain_std: 2.1808773917471215e-19
+l1_strain_std: 2.3089828133160067e-19
+merged_mean_strain_std: 1.5917059611796401e-19
+h1_l1_peak_time_offset_s: 2.79052734375
+mean_abs_detector_difference: 1.052214074335275e-18
+max_abs_detector_difference: 2.149498539230137e-18
+
+Interpretation status
+---------------------
+The standard stage treats GW150914 as an ordinary detector-baseline waveform case. Its role is to preserve the observed strain structure, peak timing, and detector-level difference before any structural propagation interpretation is introduced.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW150914\output\standard\20260420_134919

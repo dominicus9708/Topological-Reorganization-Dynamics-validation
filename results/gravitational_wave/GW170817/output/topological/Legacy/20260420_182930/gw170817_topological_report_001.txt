@@ -1,0 +1,46 @@
+GW170817 topological report (001)
+================================
+
+Purpose
+-------
+This version identifies a detector-common event-focused window from H1/L1/V1 activity before translating that window into a topological response quantity.
+
+Derived event-focus quantities
+-----------------------------
+sample_rate_hz: 4096.0
+duration_s: 4096.0
+baseline_window_s: 102.4
+focus_window_s: 10.24
+tau_focus: 11.5830078125
+event_half_window_s: 57.9150390625
+envelope_window_s: 11.5830078125
+t_focus: -1753.350341796875
+sigma_focus_peak: -0.6963528768167899
+focus_decay_status: crossed
+event_start_time_s: -1811.265380859375
+event_end_time_s: -1695.435302734375
+event_rows: 474441
+tau_decay_env: 11.321533203125
+kappa_derived: 0.08832725939663166
+decay_status_env: crossed
+
+Response summary
+----------------
+sigma_focus_min: -6.203907630520687
+sigma_focus_max: 0.41291208867150847
+sigma_env_min: 0.10567529961127685
+sigma_env_max: 1.243210326374173
+propagation_proxy_focus_max: 0.5182109611425858
+propagation_proxy_focus_mean: 0.03136734823318169
+D_mismatch_mean: 4.229843430911399e-18
+D_mismatch_max: 1.9816255326382994e-17
+postfocus_rmse_sigma_env: 0.5193546931556117
+postfocus_mae_sigma_env: 0.4669523497474294
+
+Interpretation status
+---------------------
+This topological stage should be read as an event-window-centered response model. It is not a direct full waveform replacement model.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW170817\output\topological\20260420_182930

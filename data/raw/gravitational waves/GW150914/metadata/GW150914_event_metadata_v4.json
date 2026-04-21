@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Gravitational Wave Open Science Center" />
+    <meta name="keywords" content="gravitational waves, open data" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>GWOSC API</title>
+    <link
+      rel="shortcut icon"
+      href="/static/images/icons/gwosc-fav.ico"
+    />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/solid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/fontawesome.min.js"></script>
+    <!-- Popperjs -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha256-BRqBN7dYgABqtY9Hd4ynE+1slnEw+roEPFzQ7TRRfcg="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- Gwosc style and scripts -->
+    <link rel="stylesheet" href="/static/css/gwosc.css" />
+    <script src="/static/js/gwosc.js"></script>
+
+    
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/static/rest_framework/css/prettify.css"
+/>
+<style>
+  main {
+    background: url("/static/rest_framework/img/grid.png") repeat-x;
+  }
+  .pagination {
+    --bs-pagination-active-bg: var(--clr-primary);
+    --bs-pagination-active-border-color: var(--clr-primary);
+  }
+  pre {
+    box-shadow: none;
+  }
+  pre.prettyprint * {
+    font-size: var(--step--1);
+  }
+</style>
+
+  </head>
+
+  <body>
+    <header class="primary-header">
+      <div class="brand-logo">
+        <a href="/">
+          <img src="/static/images/gwosc_logo.svg" alt="GWOSC logo" />
+        </a>
+      </div>
+      <nav class="primary-nav" role="navigation" id="top-menu">
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            Get Data
+            <ul class="nav-sublist">
+              <li class="nav-sublist-item"><a href="/data/">Data Sets</a></li>
+              <li class="nav-sublist-item">
+                <a href="/eventapi/">Events and Catalogs</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/timeline/">Timelines</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-list-item">
+            Tutorials
+            <ul class="nav-sublist">
+              <li class="nav-sublist-item">
+                <a href="/path/">Learning Path</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/tutorials/">Tutorials</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/workshops/">Workshops</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-list-item">
+            Software
+            <ul class="nav-sublist">
+              <li class="nav-sublist-item">
+                <a href="/interactive/">Web Apps</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/gps/">GPS Time Converter</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/mysources/">Source Visibility Check</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/software/">Libraries</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/api/">API Documentation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-list-item">
+            About
+            <ul class="nav-sublist">
+              <li class="nav-sublist-item">
+                <a href="/about/">About GWOSC</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/acknowledgement/">Acknowledge</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/contact/">Contact Us</a>
+              </li>
+              <li class="nav-sublist-item">
+                <a href="/projects/">Papers and Projects</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <button class="mobile-nav-toggle">
+        <img
+          class="hamburger-icon"
+          src="/static/images/hamburger_menu.svg"
+          alt=""
+        />
+      </button>
+    </header>
+
+    <main>
+      <nav class="contextual-menu">
+        
+      </nav>
+      
+<div class="container">
+  
+  <div class="mt-3">
+    <nav aria-label="breadcrumb" class="card card-body mb-2">
+      <ul class="breadcrumb mb-0">
+        
+        
+        <li class="breadcrumb-item">
+          <a href="/api/v2/?format=api">Api Root</a>
+        </li>
+        
+        
+        
+        <li class="breadcrumb-item">
+          <a href="/api/v2/event-versions?format=api">Event Version List</a>
+        </li>
+        
+        
+        
+        <li class="breadcrumb-item active">Event Version Detail</li>
+        
+        
+      </ul>
+    </nav>
+  </div>
+  <div class="mt-3">
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group btn-group-sm me-3 mb-2" role="group">
+        <div class="btn btn-primary">
+          <i class="fa-solid fa-book"></i>
+        </div>
+        <a class="btn btn-outline-primary" href="/api/v2/docs"
+          >Docs</a
+        >
+      </div>
+      <div class="btn-group btn-group-sm me-3 mb-2" role="group">
+        <div class="btn btn-primary">
+          <i class="fa-solid fa-file-arrow-down"></i>
+        </div>
+        <a class="btn btn-outline-primary" href="/api/v2/schema"
+          >
+          OpenAPI
+        </a>
+      </div>
+      <div class="btn-group btn-group-sm mb-2" role="group">
+        <div class="btn btn-primary">
+          <i class="fa-solid fa-scroll"></i>
+        </div>
+        <a
+          class="btn btn-outline-primary"
+          href="?format=json"
+          >JSON View</a
+        >
+      </div>
+    </div>
+    
+
+  <!-- Content -->
+  <div class="mt-5 mb-5" id="content" role="main" aria-label="content">
+    <div class="content-main" role="main" aria-label="main content">
+      <div class="page-header">
+        <h1>Event Version Detail</h1>
+      </div>
+      <div style="float: left">
+         <p>Return a specific version of an event.</p>
+<p><strong>Query parameters:</strong></p>
+<ul>
+<li><code>include-default-parameters</code>: if <code>true</code> or empty, include a list with the
+    preferred values for
+    <a href="/api/v2/default-parameters">default parameters</a>.</li>
+</ul>
+<p><strong>Rel URLs:</strong></p>
+<ul>
+<li>Follow <code>parameters_url</code> for a list of parameter estimations.</li>
+<li>Follow <code>timelines_url</code> for a list of timelines and segments.</li>
+<li>Follow <code>strain_files_url</code> for a list of strain file links.</li>
+</ul> 
+      </div>
+
+      
+
+      <div class="request-info" style="clear: both" aria-label="request info">
+        <pre
+          class="prettyprint"
+        ><b>GET</b> /api/v2/event-versions/GW150914-v4?format=api</pre>
+      </div>
+
+      <div class="response-info" aria-label="response info">
+        <pre
+          class="prettyprint"
+        ><span class="meta nocode"><b>HTTP 200 OK</b>
+<b>Allow:</b> <span class="lit">GET, HEAD, OPTIONS</span>
+<b>Content-Type:</b> <span class="lit">application/json</span>
+<b>Vary:</b> <span class="lit">Accept</span>
+
+</span>{
+    &quot;name&quot;: &quot;GW150914&quot;,
+    &quot;gps&quot;: 1126259462.4,
+    &quot;version&quot;: 4,
+    &quot;catalog&quot;: &quot;GWTC-2.1-confident&quot;,
+    &quot;run&quot;: &quot;O1&quot;,
+    &quot;grace_id&quot;: &quot;G184098&quot;,
+    &quot;aliases&quot;: [
+        &quot;GW150914&quot;
+    ],
+    &quot;gcn_notice&quot;: &quot;<a href="https://gcn.gsfc.nasa.gov/notices_l/G184098.lvc" rel="nofollow">https://gcn.gsfc.nasa.gov/notices_l/G184098.lvc</a>&quot;,
+    &quot;gcn_circular&quot;: &quot;<a href="https://gcn.nasa.gov/circulars?query=G184098" rel="nofollow">https://gcn.nasa.gov/circulars?query=G184098</a>&quot;,
+    &quot;doi&quot;: &quot;<a href="https://doi.org/10.7935/qf3a-3z67" rel="nofollow">https://doi.org/10.7935/qf3a-3z67</a>&quot;,
+    &quot;detectors&quot;: [
+        &quot;H1&quot;,
+        &quot;L1&quot;
+    ],
+    &quot;parameters_url&quot;: &quot;<a href="https://gwosc.org/api/v2/event-versions/GW150914-v4/parameters?format=api" rel="nofollow">https://gwosc.org/api/v2/event-versions/GW150914-v4/parameters?format=api</a>&quot;,
+    &quot;timelines_url&quot;: &quot;<a href="https://gwosc.org/api/v2/event-versions/GW150914-v4/timelines?format=api" rel="nofollow">https://gwosc.org/api/v2/event-versions/GW150914-v4/timelines?format=api</a>&quot;,
+    &quot;strain_files_url&quot;: &quot;<a href="https://gwosc.org/api/v2/event-versions/GW150914-v4/strain-files?format=api" rel="nofollow">https://gwosc.org/api/v2/event-versions/GW150914-v4/strain-files?format=api</a>&quot;
+}</pre>
+      </div>
+    </div>
+
+    
+     
+    
+  </div>
+  <!-- /.content -->
+</div>
+<!-- container -->
+
+
+
+
+<script>
+  window.drf = {
+    csrfHeaderName: "X-CSRFTOKEN",
+    csrfToken: "eSGIiio5IMKpPZmZKUdRpWhLlsVyWO1Fxh4ifTo9AaL8Mw0m6vNxeCCqKP1uYDJZ",
+  };
+</script>
+<script src="/static/rest_framework/js/ajax-form.js"></script>
+<script src="/static/rest_framework/js/csrf.js"></script>
+<script src="/static/rest_framework/js/prettify-min.js"></script>
+<script src="/static/rest_framework/js/default.js"></script>
+<script>
+  $(document).ready(function () {
+    $("form").ajaxForm();
+  });
+</script>
+
+</div>
+
+      <div id="toast-box"></div>
+    </main>
+
+    <footer>
+      <div class="footer-container container">
+        <div class="sponsor-list">
+          <div class="sponsor-row">
+            <div class="sponsor-icon-container sponsor-nsf">
+              <a href="https://www.nsf.gov/" target="_blank">
+                <img
+                  class="sponsor-icon"
+                  src="/static/images/footer_icons/monotone/nsf_logo.png"
+                  alt="NSF logo"
+                />
+              </a>
+            </div>
+            <div class="sponsor-icon-container sponsor-infn">
+              <a href="https://home.infn.it/" target="_blank">
+                <img
+                  class="sponsor-icon"
+                  src="/static/images/footer_icons/monotone/infn_logo.png"
+                  alt="INFN logo"
+                />
+              </a>
+            </div>
+            <div class="sponsor-icon-container sponsor-cnrs">
+              <a href="https://www.cnrs.fr/" target="_blank">
+                <img
+                  class="sponsor-icon"
+                  src="/static/images/footer_icons/monotone/cnrs_logo.png"
+                  alt="CNRS logo"
+                />
+              </a>
+            </div>
+            <div class="sponsor-icon-container sponsor-ego">
+              <a href="https://www.ego-gw.it/" target="_blank">
+                <img
+                  class="sponsor-icon"
+                  src="/static/images/footer_icons/monotone/ego_logo.png"
+                  alt="EGO logo"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="sponsor-row">
+            <div class="sponsor-icon-container sponsor-lsc">
+              <a href="https://www.ligo.org/" target="_blank">
+                <img
+                  class="sponsor-icon"
+                  src="/static/images/footer_icons/monotone/lsc_logo.png"
+                  alt="LSC logo"
+                />
+              </a>
+            </div>
+            <div class="sponsor-icon-container sponsor-ligo">
+              <a href="https://www.ligo.caltech.edu/" target="_blank">
+                <img
+                  class="sponsor-icon"
+                  src="/static/images/footer_icons/monotone/ligo_logo.png"
+                  alt="LIGO logo"
+                />
+              </a>
+            </div>
+            <div class="sponsor-icon-container sponsor-virgo">
+              <a href="https://www.virgo-gw.eu/" target="_blank">
+                <img
+                  class="sponsor-icon"
+                  src="/static/images/footer_icons/monotone/virgo_logo.png"
+                  alt="Virgo logo"
+                />
+              </a>
+            </div>
+            <div class="sponsor-icon-container sponsor-kagra">
+              <a href="https://gwcenter.icrr.u-tokyo.ac.jp/en/" target="_blank">
+                <img
+                  class="sponsor-icon"
+                  src="/static/images/footer_icons/monotone/kagra_logo.png"
+                  alt="Kagra logo"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>Other Related Sites</p>
+          <ul class="useful-sites">
+            <li>
+              <a class="accent-color" href="/detector_status/" target="_blank"
+                >Detector Status</a
+              >
+            </li>
+            <li>
+              <a
+                class="accent-color"
+                href="https://gracedb.ligo.org"
+                target="_blank"
+                >Low Latency Alerts</a
+              >
+            </li>
+            <li>
+              <a
+                class="accent-color"
+                href="https://zenodo.org/communities/ligo-virgo-kagra/"
+                target="_blank"
+                >Analysis Results on Zenodo.org</a
+              >
+            </li>
+            <li>
+              <a
+                class="accent-color"
+                href="https://ask.igwn.org/"
+                target="_blank"
+                >The gravitational wave community forum
+              </a>
+            </li>
+            <li>
+              <a class="accent-color" href="/join/">Join our email list </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-acknowledge">
+          <a
+            class="accent-color"
+            rel="license"
+            href="https://creativecommons.org/licenses/by/4.0/"
+          >
+            <img
+              id="cc-logo"
+              alt="Creative Commons License"
+              src="/static/images/by.png"
+              width="100px"
+              ;
+            />
+          </a>
+          <p>
+            Data released under a
+            <a
+              class="accent-color"
+              href="https://creativecommons.org/licenses/by/4.0/"
+              >CC BY 4.0 License</a
+            >.
+          </p>
+          <p>
+            Please follow
+            <a class="accent-color" href="/acknowledgement/"
+              >acknowledgement guidelines</a
+            >.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

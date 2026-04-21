@@ -1,0 +1,36 @@
+﻿metric,value,note
+row_count,16777216,Number of rows in GW170817 topological response table.
+sample_rate_hz,4096.0,Sample rate copied from input summary.
+duration_s,4096.0,Duration copied from input summary.
+baseline_window_s,102.4,Derived local baseline window in seconds.
+baseline_window_n,419430,Derived local baseline window in samples.
+focus_window_s,10.24,Derived focus-smoothing window in seconds.
+focus_window_n,41943,Derived focus-smoothing window in samples.
+tau_focus,11.5830078125,Derived focus-score e-fold timescale.
+event_half_window_s,57.9150390625,Half-width of derived event window in seconds.
+event_half_window_n,237220,Half-width of derived event window in samples.
+envelope_window_s,11.5830078125,Derived event-envelope window in seconds.
+envelope_window_n,47444,Derived event-envelope window in samples.
+A_floor,4.816574856052981e-21,Minimum positive detector-common raw amplitude.
+E_ref,2.4530949993698163e-18,Reference amplitude from outside the event window.
+E_floor,2.9433915679282217e-18,Minimum positive event-envelope amplitude.
+focus_idx,1206885,Sample index of the focus peak.
+t_focus,-1753.350341796875,Time of the detector-common focus peak.
+sigma_focus_peak,-0.6963528768167899,Peak detector-common focus score.
+focus_decay_status,crossed,Status of the focus-score e-fold detection.
+event_start_time_s,-1811.265380859375,Start time of the derived event window.
+event_end_time_s,-1695.435302734375,End time of the derived event window.
+event_rows,474441,Number of rows inside the event window.
+tau_decay_env,11.321533203125,Derived event-envelope e-fold decay time.
+kappa_derived,0.08832725939663166,Derived relaxation rate 1/tau_decay_env.
+decay_status_env,crossed,Status of the event-envelope decay detection.
+sigma_focus_min,-6.203907630520687,Minimum raw focus score.
+sigma_focus_max,0.41291208867150847,Maximum raw focus score.
+sigma_env_min,0.10567529961127685,Minimum event-envelope response value.
+sigma_env_max,1.243210326374173,Maximum event-envelope response value.
+propagation_proxy_focus_max,0.5182109611425858,Maximum absolute focus-score propagation proxy.
+propagation_proxy_focus_mean,0.03136734823318169,Mean absolute focus-score propagation proxy.
+D_mismatch_mean,4.229843430911399e-18,Mean detector mismatch across the full window.
+D_mismatch_max,1.9816255326382994e-17,Maximum detector mismatch across the full window.
+postfocus_rmse_sigma_env,0.5193546931556117,RMSE between observed and modeled event-envelope response after focus.
+postfocus_mae_sigma_env,0.4669523497474294,MAE between observed and modeled event-envelope response after focus.

@@ -1,0 +1,21 @@
+GW150914 derived manifest
+========================
+
+h1_input: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\raw\gravitational waves\GW150914\strain\H-H1_GWOSC_4KHZ_R1-1126259447-32.hdf5
+l1_input: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\raw\gravitational waves\GW150914\strain\L-L1_GWOSC_4KHZ_R1-1126259447-32.hdf5
+
+h1_rows: 131072
+l1_rows: 131072
+merged_rows: 131072
+
+h1_sample_rate_hz: 4096.0
+l1_sample_rate_hz: 4096.0
+h1_duration_s: 32
+l1_duration_s: 32
+h1_gps_start: 1126259447
+l1_gps_start: 1126259447
+
+h1_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW150914\derived\gw150914_h1_strain_4khz_32s.csv
+l1_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW150914\derived\gw150914_l1_strain_4khz_32s.csv
+merged_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW150914\derived\gw150914_h1_l1_strain_merged_4khz_32s.csv
+metadata_output: C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\data\derived\gravitational waves\GW150914\derived\gw150914_metadata_summary.csv

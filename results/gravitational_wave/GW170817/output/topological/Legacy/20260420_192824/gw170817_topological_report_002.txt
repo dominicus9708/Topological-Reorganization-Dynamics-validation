@@ -1,0 +1,54 @@
+GW170817 topological report (002)
+================================
+
+Purpose
+-------
+This version constrains the detector-common GW event score with an EM-side event proxy before defining the event window and topological response.
+
+Derived event-focus quantities
+-----------------------------
+sample_rate_hz: 4096.0
+duration_s: 4096.0
+gps_start: 1187006834.0
+baseline_window_s: 102.4
+focus_window_s: 10.24
+lambda_D: 0.6289151639054508
+t_em: 0.40000009536743164
+tau_em: 8.0
+tau_focus: 2041.166015625
+event_half_window_s: 10205.830078125
+envelope_window_s: 2041.166015625
+t_focus: -2048.0
+gps_focus: 1187006834.0
+s_event_peak: -0.0
+sigma_gw_focus_peak: -0.8078050781798152
+focus_decay_status: crossed
+event_start_time_s: -2048.0
+event_end_time_s: 2047.999755859375
+event_rows: 16777216
+tau_decay_env: 0.000244140625
+kappa_derived: 4096.0
+decay_status_env: local_minimum_fallback
+
+Response summary
+----------------
+sigma_gw_focus_min: -6.2034585173151084
+sigma_gw_focus_max: 0.4960166828041598
+s_event_min: -0.7726572091112262
+s_event_max: -0.0
+sigma_env_min: nan
+sigma_env_max: nan
+propagation_proxy_event_max: 0.16561102807963834
+propagation_proxy_event_mean: 0.0004113108058331308
+D_gw_mean: 4.229843430911399e-18
+D_gw_max: 1.9816255326382994e-17
+postfocus_rmse_sigma_env: nan
+postfocus_mae_sigma_env: nan
+
+Interpretation status
+---------------------
+This topological stage should be read as an EM-constrained event-window-centered response model. EM is used as an external event proxy, not as a direct strain-like waveform.
+
+Output directory
+----------------
+C:\Users\mincu\Desktop\Topological Reorganization Dynamics validation\results\gravitational_wave\GW170817\output\topological\20260420_192824

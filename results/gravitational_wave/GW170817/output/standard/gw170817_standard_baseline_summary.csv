@@ -1,0 +1,37 @@
+﻿metric,value,note
+h1_rows,16777216.0,Copied from GW170817 input event summary for H1.
+h1_sample_rate_hz,4096.0,Copied from GW170817 input event summary for H1.
+h1_duration_s,4096.0,Copied from GW170817 input event summary for H1.
+h1_gps_start,1187006834.0,Copied from GW170817 input event summary for H1.
+h1_peak_time_centered_s,-1408.764892578125,Copied from GW170817 input event summary for H1.
+h1_peak_abs_strain,2.023921779902421e-17,Copied from GW170817 input event summary for H1.
+h1_strain_std,5.501067455613212e-18,Copied from GW170817 input event summary for H1.
+l1_rows,16777216.0,Copied from GW170817 input event summary for L1.
+l1_sample_rate_hz,4096.0,Copied from GW170817 input event summary for L1.
+l1_duration_s,4096.0,Copied from GW170817 input event summary for L1.
+l1_gps_start,1187006834.0,Copied from GW170817 input event summary for L1.
+l1_peak_time_centered_s,179.401611328125,Copied from GW170817 input event summary for L1.
+l1_peak_abs_strain,1.4536235516127274e-17,Copied from GW170817 input event summary for L1.
+l1_strain_std,3.655498821631781e-18,Copied from GW170817 input event summary for L1.
+v1_rows,16777216.0,Copied from GW170817 input event summary for V1.
+v1_sample_rate_hz,4096.0,Copied from GW170817 input event summary for V1.
+v1_duration_s,4096.0,Copied from GW170817 input event summary for V1.
+v1_gps_start,1187006834.0,Copied from GW170817 input event summary for V1.
+v1_peak_time_centered_s,1235.94775390625,Copied from GW170817 input event summary for V1.
+v1_peak_abs_strain,8.552819052931648e-18,Copied from GW170817 input event summary for V1.
+v1_strain_std,8.760007340401246e-19,Copied from GW170817 input event summary for V1.
+merged_rows,16777216.0,Copied from GW170817 input event summary.
+merged_peak_time_centered_s,-1750.9765625,Copied from GW170817 input event summary.
+merged_peak_abs_mean_strain,8.839843184280062e-18,Copied from GW170817 input event summary.
+merged_mean_strain_std,2.2093657778202654e-18,Copied from GW170817 input event summary.
+mean_abs_diff_h1_l1,5.262442184790519e-18,Copied from GW170817 input event summary.
+mean_abs_diff_h1_v1,4.429324364398147e-18,Copied from GW170817 input event summary.
+mean_abs_diff_l1_v1,2.997763743545531e-18,Copied from GW170817 input event summary.
+max_abs_diff_h1_l1,2.972438298957449e-17,Copied from GW170817 input event summary.
+max_abs_diff_h1_v1,2.2276774699252413e-17,Copied from GW170817 input event summary.
+max_abs_diff_l1_v1,1.6030439697155722e-17,Copied from GW170817 input event summary.
+standard_peak_sample_index,1216608.0,"Sample index at maximum absolute mean(H1,L1,V1) strain."
+standard_peak_gps_time,1187007131.0234375,"GPS time at maximum absolute mean(H1,L1,V1) strain."
+standard_peak_time_from_peak_s,0.0,time_from_peak_s at the standard baseline peak row.
+standard_abs_mean_h1_l1,2.60257294240925e-18,"Mean absolute value of mean(H1,L1) strain across the full window."
+standard_abs_mean_h1_l1_v1,1.7509734209626704e-18,"Mean absolute value of mean(H1,L1,V1) strain across the full window."
