@@ -1,0 +1,6 @@
+scenario,time_tau,event,removed_axes,released_normalized,internal_retained_cumulative,prestructure_outflow_cumulative,dissipation_cumulative
+symmetric_direct,1.776,D6_to_D3_direct_triple,"4,5,6",3.0,1.6500000000000001,0.8999999999999999,0.44999999999999996
+pair_dominant_45,1.762,D6_to_D4_pair_45,"4,5",2.0,1.1,0.6,0.3
+pair_dominant_45,2.498,D4_to_D3_single_6,6,1.0,1.6500000000000001,0.8999999999999999,0.44999999999999996
+single_dominant_6,1.762,D6_to_D5_single_6,6,1.0,0.55,0.3,0.15
+single_dominant_6,1.776,D5_to_D3_pair_45,"4,5",2.0,1.6500000000000001,0.8999999999999999,0.44999999999999996
