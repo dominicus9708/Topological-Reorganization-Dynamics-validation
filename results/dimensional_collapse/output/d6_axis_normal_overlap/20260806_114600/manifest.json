@@ -1,0 +1,22 @@
+{
+  "author": "Kwon Dominicus",
+  "classification": "Construction / Consistency Check / Internal exploratory record",
+  "model": "D6 axis-normal overlap and N-dimensional prestructure collapse toy model",
+  "prestructure_status": "N-dimensional candidate/exchange regime; not a finite higher-dimensional bulk, not a material boundary surface",
+  "scenario_count": 4,
+  "grid_case_count": 125,
+  "grid_sequence_counts": {
+    "D6_to_D4_pair_45 -> D4_to_D3_single_6": 56,
+    "D6_to_D5_single_4 -> D5_to_D4_single_5 -> D4_to_D3_single_6": 28,
+    "D6_to_D3_direct_triple": 21,
+    "D6_to_D4_pair_45": 15,
+    "none": 5
+  },
+  "convergence": [
+    {"dt": 0.008, "direct_D6_to_D3": true, "event_time_tau": 1.768, "max_ledger_error": 0.0},
+    {"dt": 0.004, "direct_D6_to_D3": true, "event_time_tau": 1.772, "max_ledger_error": 0.0},
+    {"dt": 0.002, "direct_D6_to_D3": true, "event_time_tau": 1.776, "max_ledger_error": 0.0},
+    {"dt": 0.001, "direct_D6_to_D3": true, "event_time_tau": 1.776, "max_ledger_error": 0.0},
+    {"dt": 0.0005, "direct_D6_to_D3": true, "event_time_tau": 1.7765, "max_ledger_error": 0.0}
+  ]
+}
