@@ -1,0 +1,32 @@
+{
+  "author": "Kwon Dominicus",
+  "classification": "Construction / Consistency Check / Internal exploratory record",
+  "model": "D6 axis-normal overlap and N-dimensional prestructure collapse toy model",
+  "prestructure_status": "N-dimensional candidate/exchange regime; not a finite higher-dimensional bulk, not a material boundary surface",
+  "scenario_count": 4,
+  "grid_case_count": 125,
+  "inherited_channel_removal": {
+    "symmetric": "D6_to_D3_direct_triple at 1.776 tau",
+    "pair_dominant": "D6_to_D4_pair_45 -> D4_to_D3_single_6",
+    "single_dominant": "D6_to_D5_single_6 -> D5_to_D3_pair_45",
+    "no_overlap": "D6 remains"
+  },
+  "strict_rank_baseline": {
+    "symmetric": [
+      "D6_to_D4_strict_rank at 1.216 tau",
+      "D4_to_D3_strict_rank at 3.124 tau"
+    ],
+    "pair_dominant": "D6_to_D5 -> D5_to_D4 -> D4_to_D3",
+    "single_dominant": "D6_to_D5 -> D5_to_D4 -> D4_to_D3",
+    "no_overlap": "D6 remains"
+  },
+  "audit_status": "Dual interpretation retained: inherited coupled-channel removal and strict effective Gram-rank audit",
+  "critical_finding": "Pair/triple redundancy is not sufficient by itself to prove extinction of the remaining common direction.",
+  "convergence": [
+    {"dt": 0.008, "direct_D6_to_D3": true, "event_time_tau": 1.768, "max_ledger_error": 0.0},
+    {"dt": 0.004, "direct_D6_to_D3": true, "event_time_tau": 1.772, "max_ledger_error": 0.0},
+    {"dt": 0.002, "direct_D6_to_D3": true, "event_time_tau": 1.776, "max_ledger_error": 0.0},
+    {"dt": 0.001, "direct_D6_to_D3": true, "event_time_tau": 1.776, "max_ledger_error": 0.0},
+    {"dt": 0.0005, "direct_D6_to_D3": true, "event_time_tau": 1.7765, "max_ledger_error": 0.0}
+  ]
+}

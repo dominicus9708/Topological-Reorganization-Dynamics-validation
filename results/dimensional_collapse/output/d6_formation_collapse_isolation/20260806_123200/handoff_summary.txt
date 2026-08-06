@@ -1,0 +1,37 @@
+DSD D6 formation-collapse-stability/isolation handoff
+Author: Kwon Dominicus
+Status: Construction / Consistency Check
+
+Prestructure
+- N-dimensional candidate/exchange regime with a finite normalized energy reservoir
+- not a D7 bulk, material boundary, or infinite-energy space
+
+New state measurements
+- formation and collapse events
+- local versus connected Gram rank
+- prestructure inflow, high-rank outflow, and net import
+- collapse release ledger
+- scale factor, H, volume factor, accelerated interval, and e-fold
+- particle and rank expansion-speed ratios
+- connected-to-isolated energy transfer
+- stable, relaxing, and extinct terminal states
+
+Baseline results
+- balanced: stable D3, 1.339811 e-fold, particle isolation 0.326549, rank-energy isolation 0.957443
+- strong expansion: relaxing D3, 1.653648 e-fold, particle isolation 0.712407, rank-energy isolation 0.990774
+- extinction: formed episode below threshold at 8.344 tau, final episode energy 0.000434
+- retained high-rank: stable local/connected D5, 0.116560 e-fold, negligible isolation
+
+Critical finding
+- in the strong-expansion case connected D4->D3 occurred at 4.516 tau while local D4->D3 occurred at 5.314 tau
+- expansion-driven isolation can lower connected rank before local rank disappears
+
+Grid
+- 125 cells
+- 36 cells ended with local rank greater than connected rank
+- e-fold range 0.338382 to 1.689409
+- no inflation reproduction; values are far below 60 e-fold
+
+Limits
+- phenomenological normalized projection, not Friedmann dynamics
+- isolation thresholds and coupling coefficients are construction parameters

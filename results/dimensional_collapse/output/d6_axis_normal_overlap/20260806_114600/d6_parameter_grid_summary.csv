@@ -1,0 +1,6 @@
+event_sequence,final_dimension,cell_count
+D6_to_D4_pair_45 -> D4_to_D3_single_6,3,56
+D6_to_D5_single_4 -> D5_to_D4_single_5 -> D4_to_D3_single_6,3,28
+D6_to_D3_direct_triple,3,21
+D6_to_D4_pair_45,4,15
+none,6,5
