@@ -1,0 +1,5 @@
+scenario,final_dimension,event_count,event_sequence,first_event_time_tau,direct_D6_to_D3,max_ledger_error
+symmetric_direct,3,1,['D6_to_D3_direct_triple'],1.776,True,0.0
+pair_dominant_45,3,2,"['D6_to_D4_pair_45', 'D4_to_D3_single_6']",1.762,False,0.0
+single_dominant_6,3,2,"['D6_to_D5_single_6', 'D5_to_D3_pair_45']",1.762,False,0.0
+no_overlap_control,6,0,[],,False,0.0
