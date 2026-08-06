@@ -1,0 +1,5 @@
+scenario,final_dimension,event_count,event_sequence,first_event_time_tau
+symmetric_direct_rule_audit,3,2,"['D6_to_D4_strict_rank', 'D4_to_D3_strict_rank']",1.216
+pair_dominant_45,3,3,"['D6_to_D5_strict_rank', 'D5_to_D4_strict_rank', 'D4_to_D3_strict_rank']",1.094
+single_dominant_6,3,3,"['D6_to_D5_strict_rank', 'D5_to_D4_strict_rank', 'D4_to_D3_strict_rank']",1.072
+no_overlap_control,6,0,[],
