@@ -1,0 +1,26 @@
+DSD D3 PRESTRUCTURE NORMAL-ANGLE SIMULATION HANDOFF
+
+STATUS
+Construction / Consistency Check / Exploratory Simulation
+
+BASE RULE
+The realized universe remains D3. High-rank channels are prestructural exchange paths.
+
+ANGLE KERNEL
+Gross crossing: cos(theta)
+D3 domain coupling: sin^2(theta)
+Internal transfer: cos(theta) sin^2(theta)
+Pass-through: cos^3(theta)
+
+MAIN RESULT
+The common-angle scan peaked at 55 degrees.
+Internal coupling: 4.277111
+Mean e-fold: 2.865663
+
+DISTINCTION
+Pass-through outflow is not a convergence source. Only withdrawal of already coupled D3 energy drives convergence.
+
+NUMERICAL STATUS
+Maximum baseline ledger error: 6.022e-13
+Maximum grid ledger error: 1.261e-13
+Independent numerical reevaluation difference: <= 9.1e-13
