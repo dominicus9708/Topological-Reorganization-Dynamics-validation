@@ -1,0 +1,6 @@
+name,theta4,theta5,theta6,dt,t_end,out_scale,equalize,inflow_on,inflow_off,outflow_on,outflow_off
+near_normal_pass_through,5,5,5,0.004,18,1.0,1.0,0.8,6.0,4.2,13.0
+intermediate_angle_isotropic,54.735610317,54.735610317,54.735610317,0.004,18,1.0,1.0,0.8,6.0,4.2,13.0
+mixed_angle_anisotropic,54.735610317,20,75,0.004,18,1.0,0.5,0.8,6.0,4.2,13.0
+near_tangent_weak_crossing,85,85,85,0.004,18,1.0,1.0,0.8,6.0,4.2,13.0
+intermediate_angle_withdrawal,54.735610317,54.735610317,54.735610317,0.004,14,3.73,1.0,0.8,5.2,3.8,14.0
