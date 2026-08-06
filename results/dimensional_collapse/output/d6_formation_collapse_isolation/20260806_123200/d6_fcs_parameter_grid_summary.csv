@@ -1,0 +1,6 @@
+terminal_state,final_local_dimension,final_connected_dimension,cell_count
+relaxing,3,3,46
+stable,3,3,30
+relaxing,4,3,24
+relaxing,4,4,13
+relaxing,5,4,12
