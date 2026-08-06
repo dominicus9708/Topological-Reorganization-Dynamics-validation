@@ -2,31 +2,27 @@ DSD D6 collapse toy model handoff
 Author: Kwon Dominicus
 Status: Construction / Consistency Check
 
-Core result
-- symmetric baseline: D6 -> D3 direct triple collapse at t/tau=1.776
-- pair-dominant case: D6 -> D4 -> D3
-- single-dominant case: D6 -> D5 -> D3
-- no-overlap control: D6 remains
-
 Prestructure rule
-- structure-splitting prestructure is treated as an N-dimensional candidate/exchange regime
-- it is not a finite D7 bulk and not a material boundary
+- structure-splitting prestructure is an N-dimensional candidate/exchange regime
+- it is not a finite D7 bulk, a material boundary, or an area flux
 
-Grid
-D6_to_D4_pair_45 -> D4_to_D3_single_6                          56
-D6_to_D5_single_4 -> D5_to_D4_single_5 -> D4_to_D3_single_6    28
-D6_to_D3_direct_triple                                         21
-D6_to_D4_pair_45                                               15
-none                                                            5
+Model A: inherited D5 coupled-channel removal
+- symmetric: D6 -> D3 at 1.776 tau
+- pair-dominant: D6 -> D4 -> D3
+- single-dominant: D6 -> D5 -> D3
+- no-overlap: D6 remains
 
-Numerical convergence
-    dt  direct_D6_to_D3  event_time_tau  max_ledger_error
-0.0080             True          1.7680               0.0
-0.0040             True          1.7720               0.0
-0.0020             True          1.7760               0.0
-0.0010             True          1.7760               0.0
-0.0005             True          1.7765               0.0
+Model B: strict effective Gram-rank audit
+- symmetric: D6 -> D4 at 1.216 tau -> D3 at 3.124 tau
+- pair-dominant: D6 -> D5 -> D4 -> D3
+- single-dominant: D6 -> D5 -> D4 -> D3
+- no-overlap: D6 remains
 
-Interpretive limit
-- This does not prove necessary collapse or D3 uniqueness.
-- The D5 event time was used as a calibration anchor, not as a D6 physical constant.
+Main audit finding
+- loss of mutual independence is not identical to extinction of the remaining common direction
+- direct channel removal and direct strict-rank collapse must be named separately
+- the previous D5 direct-collapse terminology requires re-audit under this distinction
+
+Limits
+- no proof of necessary D6 collapse or D3 uniqueness
+- D5 event time was a calibration anchor, not a D6 physical constant
