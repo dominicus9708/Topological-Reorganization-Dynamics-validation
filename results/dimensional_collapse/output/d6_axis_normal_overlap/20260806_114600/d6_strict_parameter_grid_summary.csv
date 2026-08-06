@@ -1,0 +1,8 @@
+event_sequence,final_dimension,cell_count
+D6_to_D5_strict_rank -> D5_to_D4_strict_rank -> D4_to_D3_strict_rank,3,48
+D6_to_D5_strict_rank -> D5_to_D4_strict_rank,4,31
+D6_to_D3_strict_rank,3,20
+D6_to_D4_strict_rank -> D4_to_D3_strict_rank,3,12
+D6_to_D4_strict_rank,4,8
+none,6,5
+D6_to_D5_strict_rank,5,1
