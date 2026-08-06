@@ -1,0 +1,38 @@
+DSD D3 prestructure-exchange and axial-tension simulation handoff
+Author: Kwon Dominicus
+Status: Construction / Consistency Check / Exploratory simulation
+
+Scope
+- base universe dimension is fixed at D3 throughout
+- channels 4, 5, and 6 are N-dimensional prestructure exchange pathways projected onto D3 axes
+- they are not realized additional dimensions
+- default direct high-rank-to-particle coupling is zero
+
+Baseline results
+- balanced isotropic exchange: 2.962222 e-fold; first channel isolation 1.734 tau; particle isolation 2.386 tau
+- anisotropic single-channel exchange: peak tension deviation 0.129374; 2.651897 e-fold despite greater inflow than the balanced case
+- outflow-dominant case: convergence begins at 12.704 tau; final H=-0.038557
+- rapid expansion/isolation: 4.835764 e-fold; channel isolation 1.202 tau; particle isolation 1.708 tau
+
+Key finding
+- high-rank energy can strongly alter D3 metric response and connectivity while direct particle-energy import remains exactly zero
+- symmetric inflow favors isotropic expansion
+- anisotropic inflow remains partly stored as D3 axial-tension deviation
+- outflow produces delayed convergence through a response-memory term
+- cross channels isolate before the particle population in all four baseline scenarios
+
+125-cell grid
+- expansion/isolation D3: 97
+- converging D3: 19
+- scale-floor contracted D3: 9
+- final connected cross channels: 0 in 112 cells; 1 in 4; 2 in 2; 3 in 7
+- maximum e-fold: 4.993932
+
+Numerical audit
+- deterministic rerun matched five core CSV files byte-for-byte
+- maximum baseline energy-ledger error <= 5.37e-13
+
+Interpretive limit
+- expansion equation is phenomenological, not a Friedmann derivation
+- indirect particle response is a response proxy, not an observable energy
+- scale-floor contraction is a numerical stress outcome, not D3 extinction
