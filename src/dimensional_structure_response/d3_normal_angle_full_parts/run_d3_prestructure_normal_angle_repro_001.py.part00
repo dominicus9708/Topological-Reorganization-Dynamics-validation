@@ -1,0 +1,220 @@
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+from dataclasses import asdict, dataclass
+from itertools import product
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+import numpy as np
+import pandas as pd
+
+CHANNELS = (4, 5, 6)
+AXES = ("x", "y", "z")
+CHANNEL_AXIS = {4: 0, 5: 1, 6: 2}
+
+
+@dataclass(frozen=True)
+class Params:
+    name: str
+    dt: float = 0.002
+    t_end: float = 18.0
+
+    initial_prestructure_energy: float = 12.0
+    cross_channel_capacity: float = 5.0
+    initial_particle_energy: float = 1.0
+
+    inflow_onset: float = 0.8
+    inflow_offset: float = 6.0
+    inflow_width: float = 0.35
+    k_inflow: float = 0.62
+    channel_weight_4: float = 1.0 / 3.0
+    channel_weight_5: float = 1.0 / 3.0
+    channel_weight_6: float = 1.0 / 3.0
+
+    theta_deg_4: float = 54.735610317
+    theta_deg_5: float = 54.735610317
+    theta_deg_6: float = 54.735610317
+    crossing_power: float = 1.0
+    domain_coupling_power: float = 2.0
+
+    k_cross_to_d3: float = 0.78
+    cross_energy_return_rate: float = 0.014
+    cross_energy_return_fraction: float = 0.92
+
+    outflow_onset: float = 4.2
+    outflow_offset: float = 13.0
+    outflow_width: float = 0.50
+    k_outflow_cross: float = 0.11
+    k_outflow_relax: float = 0.060
+
+    relaxation_decay_connected: float = 0.050
+    relaxation_decay_isolated: float = 0.016
+    relaxation_return_fraction: float = 0.20
+
+    convergence_memory_gain: float = 0.84
+    convergence_memory_decay: float = 0.32
+
+    baseline_axial_tension: float = 1.0
+    k_tension_relax_inflow: float = 0.25
+    k_tension_converge_outflow: float = 0.33
+    tension_equalization: float = 0.52
+    tension_restore: float = 0.075
+
+    lambda_relaxation: float = 0.96
+    lambda_convergence: float = 0.90
+    lambda_tension_relaxation: float = 0.44
+    lambda_tension_convergence: float = 0.48
+    hubble_relaxation: float = 0.43
+    directional_hubble_equalization: float = 0.28
+    expansion_volume_floor: float = 0.85
+
+    c_info_particle: float = 1.0
+    c_info_channel: float = 0.86
+    comoving_particle_scale: float = 1.55
+    comoving_channel_scale_4: float = 2.10
+    comoving_channel_scale_5: float = 2.45
+    comoving_channel_scale_6: float = 2.80
+    isolation_exponent: float = 4.0
+    k_isolation_particle: float = 1.10
+    k_isolation_channel: float = 1.35
+    k_reconnection_particle: float = 0.030
+    k_reconnection_channel: float = 0.018
+
+    particle_domain_overlap_4: float = 0.0
+    particle_domain_overlap_5: float = 0.0
+    particle_domain_overlap_6: float = 0.0
+
+    active_channel_energy_threshold: float = 0.020
+    anisotropy_event_threshold: float = 0.040
+    shear_event_threshold: float = 0.020
+    expansion_event_threshold: float = 0.020
+    contraction_event_threshold: float = -0.020
+    extinction_energy_threshold: float = 0.050
+
+
+def sigmoid(x: float) -> float:
+    if x > 700:
+        return 1.0
+    if x < -700:
+        return 0.0
+    return 1.0 / (1.0 + math.exp(-x))
+
+
+def window(t: float, onset: float, offset: float, width: float) -> float:
+    return sigmoid((t - onset) / width) * (1.0 - sigmoid((t - offset) / width))
+
+
+def take(source: float, rate: float, dt: float) -> float:
+    return min(max(rate, 0.0) * dt, max(source, 0.0))
+
+
+def isolation_fraction(speed_ratio: float, exponent: float) -> float:
+    x = max(speed_ratio, 0.0) ** exponent
+    return x / (1.0 + x)
+
+
+def normalize_weights(p: Params) -> Dict[int, float]:
+    raw = {
+        4: p.channel_weight_4,
+        5: p.channel_weight_5,
+        6: p.channel_weight_6,
+    }
+    if any(v < 0.0 for v in raw.values()):
+        raise ValueError("channel weights must be nonnegative")
+    total = sum(raw.values())
+    if total <= 0.0:
+        raise ValueError("at least one channel weight must be positive")
+    return {q: raw[q] / total for q in CHANNELS}
+
+
+def theta_deg(p: Params, q: int) -> float:
+    value = {4: p.theta_deg_4, 5: p.theta_deg_5, 6: p.theta_deg_6}[q]
+    if not 0.0 <= value <= 90.0:
+        raise ValueError(f"theta_deg_{q} must be in [0, 90]")
+    return float(value)
+
+
+def geometry(p: Params, q: int) -> Tuple[float, float, float]:
+    """Return crossing, D3-domain coupling, and immediate pass-through fractions.
+
+    Gross crossing is weighted by cos(theta)^crossing_power.
+    The crossed amount couples to D3 by sin(theta)^domain_coupling_power.
+    The remainder is undefined in D3 and returns immediately to prestructure.
+    """
+    theta = math.radians(theta_deg(p, q))
+    crossing = max(math.cos(theta), 0.0) ** p.crossing_power
+    coupling = max(math.sin(theta), 0.0) ** p.domain_coupling_power
+    coupling = min(max(coupling, 0.0), 1.0)
+    pass_fraction = 1.0 - coupling
+    return crossing, coupling, pass_fraction
+
+
+def channel_scale(p: Params, q: int) -> float:
+    return {
+        4: p.comoving_channel_scale_4,
+        5: p.comoving_channel_scale_5,
+        6: p.comoving_channel_scale_6,
+    }[q]
+
+
+def domain_overlap(p: Params, q: int) -> float:
+    return {
+        4: p.particle_domain_overlap_4,
+        5: p.particle_domain_overlap_5,
+        6: p.particle_domain_overlap_6,
+    }[q]
+
+
+def _event(events: List[dict], p: Params, t: float, event_class: str, event: str,
+           mean_scale: float, mean_h: float, shear_h: float,
+           cumulative_gross_crossing: float, cumulative_pass: float,
+           cumulative_internal: float, cumulative_withdrawal: float) -> None:
+    events.append({
+        "scenario": p.name,
+        "time_tau": float(t),
+        "event_class": event_class,
+        "event": event,
+        "base_dimension": 3,
+        "mean_scale_factor": mean_scale,
+        "mean_H": mean_h,
+        "directional_H_shear": shear_h,
+        "cumulative_gross_crossing": cumulative_gross_crossing,
+        "cumulative_pass_through": cumulative_pass,
+        "cumulative_internal_coupling": cumulative_internal,
+        "cumulative_withdrawal_outflow": cumulative_withdrawal,
+    })
+
+
+def simulate(p: Params, record_stride: int = 1) -> Tuple[pd.DataFrame, pd.DataFrame, dict]:
+    weights = normalize_weights(p)
+    geom = {q: geometry(p, q) for q in CHANNELS}
+
+    prestructure = p.initial_prestructure_energy
+    cross_connected = {q: 0.0 for q in CHANNELS}
+    cross_isolated = {q: 0.0 for q in CHANNELS}
+    relax_connected = np.zeros(3, dtype=float)
+    relax_isolated = np.zeros(3, dtype=float)
+    dissipated = 0.0
+    direct_particle_import = 0.0
+
+    particle_connected = p.initial_particle_energy
+    particle_isolated = 0.0
+
+    tension = np.full(3, p.baseline_axial_tension, dtype=float)
+    convergence_memory = np.zeros(3, dtype=float)
+    scale = np.ones(3, dtype=float)
+    hubble = np.zeros(3, dtype=float)
+
+    cumulative_gross_crossing = 0.0
+    cumulative_pass = 0.0
+    cumulative_internal_coupling = 0.0
+    cumulative_cross_to_d3 = 0.0
+    cumulative_withdrawal = 0.0
+    cumulative_direct_particle = 0.0
+    cumulative_indirect_particle_response = 0.0
+
+    rows: List[dict] = []
