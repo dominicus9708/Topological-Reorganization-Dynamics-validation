@@ -1,0 +1,220 @@
+    events: List[dict] = []
+    expansion_active = False
+    contraction_active = False
+    anisotropy_active = False
+    shear_active = False
+    previous_particle_ratio = 0.0
+    previous_channel_ratio = {q: 0.0 for q in CHANNELS}
+
+    time_values = np.arange(0.0, p.t_end + p.dt / 2.0, p.dt)
+    last_step = len(time_values) - 1
+    for step_idx, t in enumerate(time_values):
+        t = float(t)
+        inflow_gate = window(t, p.inflow_onset, p.inflow_offset, p.inflow_width)
+        outflow_gate = window(t, p.outflow_onset, p.outflow_offset, p.outflow_width)
+
+        mean_scale = float(np.prod(scale) ** (1.0 / 3.0))
+        mean_h = float(np.mean(hubble))
+        volume = float(np.prod(scale))
+
+        total_cross = sum(cross_connected.values()) + sum(cross_isolated.values())
+        capacity_gate = max(1.0 - total_cross / p.cross_channel_capacity, 0.0)
+
+        # Gross crossing is angle-limited. Only the D3-domain component is stored;
+        # the undefined component returns immediately and does not drive convergence.
+        desired = {}
+        for q in CHANNELS:
+            crossing, _, _ = geom[q]
+            axis = CHANNEL_AXIS[q]
+            speed_ratio = (
+                max(hubble[axis], 0.0) * scale[axis] * channel_scale(p, q)
+                / max(p.c_info_channel, 1e-12)
+            )
+            exchange_gate = 1.0 - isolation_fraction(speed_ratio, p.isolation_exponent)
+            desired[q] = (
+                p.k_inflow * inflow_gate * prestructure * capacity_gate
+                * weights[q] * crossing * exchange_gate * p.dt
+            )
+        desired_total = sum(desired.values())
+        allocation = min(1.0, prestructure / desired_total) if desired_total > 0.0 else 0.0
+
+        gross_increment = {q: desired[q] * allocation for q in CHANNELS}
+        pass_increment = {q: 0.0 for q in CHANNELS}
+        internal_increment = {q: 0.0 for q in CHANNELS}
+        gross_total = sum(gross_increment.values())
+        prestructure -= gross_total
+        for q in CHANNELS:
+            _, coupling, pass_fraction = geom[q]
+            gross = gross_increment[q]
+            internal = gross * coupling
+            passed = gross * pass_fraction
+            cross_connected[q] += internal
+            prestructure += passed
+            internal_increment[q] = internal
+            pass_increment[q] = passed
+            cumulative_gross_crossing += gross
+            cumulative_pass += passed
+            cumulative_internal_coupling += internal
+
+        # Coupled high-rank energy affects the D3 axis associated with each channel.
+        transfer_increment = {q: 0.0 for q in CHANNELS}
+        direct_increment = {q: 0.0 for q in CHANNELS}
+        for q in CHANNELS:
+            amount = take(cross_connected[q], p.k_cross_to_d3 * cross_connected[q], p.dt)
+            overlap = min(max(domain_overlap(p, q), 0.0), 1.0)
+            direct = amount * overlap
+            indirect = amount - direct
+            cross_connected[q] -= amount
+            axis = CHANNEL_AXIS[q]
+            relax_connected[axis] += indirect
+            particle_connected += direct
+            direct_particle_import += direct
+            transfer_increment[q] = indirect
+            direct_increment[q] = direct
+            cumulative_cross_to_d3 += indirect
+            cumulative_direct_particle += direct
+
+        # Withdrawal outflow removes already coupled D3 support and drives convergence.
+        withdrawal_increment = {q: 0.0 for q in CHANNELS}
+        for q in CHANNELS:
+            crossing, _, _ = geom[q]
+            axis = CHANNEL_AXIS[q]
+            from_cross = take(
+                cross_connected[q],
+                p.k_outflow_cross * crossing * outflow_gate * cross_connected[q],
+                p.dt,
+            )
+            cross_connected[q] -= from_cross
+            from_relax = take(
+                relax_connected[axis],
+                p.k_outflow_relax * crossing * outflow_gate * relax_connected[axis],
+                p.dt,
+            )
+            relax_connected[axis] -= from_relax
+            amount = from_cross + from_relax
+            prestructure += amount
+            withdrawal_increment[q] = amount
+            cumulative_withdrawal += amount
+
+        # Unused coupled channel energy can return; this is distinct from pass-through.
+        for q in CHANNELS:
+            crossing, _, _ = geom[q]
+            returned = take(
+                cross_connected[q],
+                p.cross_energy_return_rate * crossing * cross_connected[q],
+                p.dt,
+            )
+            cross_connected[q] -= returned
+            prestructure += returned * p.cross_energy_return_fraction
+            dissipated += returned * (1.0 - p.cross_energy_return_fraction)
+
+            returned_iso = take(
+                cross_isolated[q],
+                0.35 * p.cross_energy_return_rate * crossing * cross_isolated[q],
+                p.dt,
+            )
+            cross_isolated[q] -= returned_iso
+            prestructure += returned_iso * p.cross_energy_return_fraction
+            dissipated += returned_iso * (1.0 - p.cross_energy_return_fraction)
+
+        transfer_rate = np.zeros(3, dtype=float)
+        withdrawal_rate = np.zeros(3, dtype=float)
+        for q in CHANNELS:
+            axis = CHANNEL_AXIS[q]
+            transfer_rate[axis] += transfer_increment[q] / p.dt
+            withdrawal_rate[axis] += withdrawal_increment[q] / p.dt
+
+        mean_tension = float(np.mean(tension))
+        tension_derivative = (
+            -p.k_tension_relax_inflow * transfer_rate
+            + p.k_tension_converge_outflow * withdrawal_rate
+            + p.tension_equalization * (mean_tension - tension)
+            + p.tension_restore * (p.baseline_axial_tension - tension)
+        )
+        tension += p.dt * tension_derivative
+        convergence_memory += p.dt * (
+            p.convergence_memory_gain * withdrawal_rate
+            - p.convergence_memory_decay * convergence_memory
+        )
+
+        # Relaxation energy decays, but does not directly heat particles.
+        for axis in range(3):
+            decay = take(
+                relax_connected[axis],
+                p.relaxation_decay_connected * relax_connected[axis],
+                p.dt,
+            )
+            relax_connected[axis] -= decay
+            prestructure += decay * p.relaxation_return_fraction
+            dissipated += decay * (1.0 - p.relaxation_return_fraction)
+
+            decay_iso = take(
+                relax_isolated[axis],
+                p.relaxation_decay_isolated * relax_isolated[axis],
+                p.dt,
+            )
+            relax_isolated[axis] -= decay_iso
+            prestructure += decay_iso * p.relaxation_return_fraction
+            dissipated += decay_iso * (1.0 - p.relaxation_return_fraction)
+
+        mean_tension = float(np.mean(tension))
+        tension_deviation = float(np.std(tension))
+        tension_relaxation = np.maximum(p.baseline_axial_tension - tension, 0.0)
+        tension_convergence = np.maximum(tension - p.baseline_axial_tension, 0.0)
+
+        relaxation_drive = (
+            relax_connected / (volume + p.expansion_volume_floor)
+            + p.lambda_tension_relaxation * tension_relaxation
+        )
+        contraction_drive = (
+            convergence_memory
+            + p.lambda_tension_convergence * tension_convergence
+        )
+        mean_h_before = float(np.mean(hubble))
+        d_hubble = (
+            p.lambda_relaxation * relaxation_drive
+            - p.lambda_convergence * contraction_drive
+            - p.hubble_relaxation * hubble
+            + p.directional_hubble_equalization * (mean_h_before - hubble)
+        )
+        hubble += p.dt * d_hubble
+        scale *= np.exp(hubble * p.dt)
+        scale = np.maximum(scale, 1e-8)
+
+        mean_scale = float(np.prod(scale) ** (1.0 / 3.0))
+        mean_h = float(np.mean(hubble))
+        shear_h = float(np.std(hubble))
+        volume = float(np.prod(scale))
+
+        particle_speed_ratio = (
+            max(mean_h, 0.0) * mean_scale * p.comoving_particle_scale
+            / max(p.c_info_particle, 1e-12)
+        )
+        particle_gate = isolation_fraction(particle_speed_ratio, p.isolation_exponent)
+        amount = take(
+            particle_connected,
+            p.k_isolation_particle * particle_gate * particle_connected,
+            p.dt,
+        )
+        particle_connected -= amount
+        particle_isolated += amount
+        amount = take(
+            particle_isolated,
+            p.k_reconnection_particle * (1.0 - particle_gate) * particle_isolated,
+            p.dt,
+        )
+        particle_isolated -= amount
+        particle_connected += amount
+
+        channel_speed_ratios = {}
+        channel_gates = {}
+        for q in CHANNELS:
+            axis = CHANNEL_AXIS[q]
+            ratio = (
+                max(hubble[axis], 0.0) * scale[axis] * channel_scale(p, q)
+                / max(p.c_info_channel, 1e-12)
+            )
+            gate = isolation_fraction(ratio, p.isolation_exponent)
+            channel_speed_ratios[q] = ratio
+            channel_gates[q] = gate
+            amount = take(
