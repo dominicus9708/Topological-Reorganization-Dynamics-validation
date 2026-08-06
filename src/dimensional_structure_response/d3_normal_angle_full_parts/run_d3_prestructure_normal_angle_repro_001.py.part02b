@@ -1,0 +1,110 @@
+            phase = "directional_shear"
+        elif tension_deviation >= p.anisotropy_event_threshold:
+            phase = "tension_anisotropy"
+        elif total_exchange >= p.extinction_energy_threshold:
+            phase = "exchange_relaxation"
+        else:
+            phase = "stable_d3"
+
+        if step_idx % max(record_stride, 1) == 0 or step_idx == last_step:
+            rows.append({
+                    "scenario": p.name,
+                "t_tau": t,
+                "phase_label": phase,
+                "base_dimension": 3,
+                "theta_deg_4": theta_deg(p, 4),
+                "theta_deg_5": theta_deg(p, 5),
+                "theta_deg_6": theta_deg(p, 6),
+                "gross_crossing_rate": sum(gross_increment.values()) / p.dt,
+                "pass_through_rate": sum(pass_increment.values()) / p.dt,
+                "internal_coupling_rate": sum(internal_increment.values()) / p.dt,
+                "withdrawal_outflow_rate": sum(withdrawal_increment.values()) / p.dt,
+                "cumulative_gross_crossing": cumulative_gross_crossing,
+                "cumulative_pass_through": cumulative_pass,
+                "cumulative_internal_coupling": cumulative_internal_coupling,
+                "cumulative_cross_to_d3": cumulative_cross_to_d3,
+                "cumulative_withdrawal_outflow": cumulative_withdrawal,
+                "pass_through_fraction_of_crossing": cumulative_pass / max(cumulative_gross_crossing, 1e-12),
+                "internal_fraction_of_crossing": cumulative_internal_coupling / max(cumulative_gross_crossing, 1e-12),
+                "prestructure_energy": prestructure,
+                "cross_connected_energy": sum(cross_connected.values()),
+                "cross_isolated_energy": sum(cross_isolated.values()),
+                "relax_connected_x": relax_connected[0],
+                "relax_connected_y": relax_connected[1],
+                "relax_connected_z": relax_connected[2],
+                "relax_isolated_x": relax_isolated[0],
+                "relax_isolated_y": relax_isolated[1],
+                "relax_isolated_z": relax_isolated[2],
+                "direct_particle_import_energy": direct_particle_import,
+                "cumulative_direct_particle_import": cumulative_direct_particle,
+                "cumulative_indirect_particle_response": cumulative_indirect_particle_response,
+                "particle_connected_energy": particle_connected,
+                "particle_isolated_energy": particle_isolated,
+                "particle_isolated_fraction": particle_iso_fraction,
+                "cross_energy_isolated_fraction": cross_iso_fraction,
+                "relaxation_energy_isolated_fraction": relax_iso_fraction,
+                "tension_x": tension[0],
+                "tension_y": tension[1],
+                "tension_z": tension[2],
+                "mean_axial_tension": mean_tension,
+                "axial_tension_deviation": tension_deviation,
+                "convergence_memory_x": convergence_memory[0],
+                "convergence_memory_y": convergence_memory[1],
+                "convergence_memory_z": convergence_memory[2],
+                "scale_x": scale[0],
+                "scale_y": scale[1],
+                "scale_z": scale[2],
+                "mean_scale_factor": mean_scale,
+                "volume_factor": volume,
+                "H_x": hubble[0],
+                "H_y": hubble[1],
+                "H_z": hubble[2],
+                "mean_H": mean_h,
+                "directional_H_shear": shear_h,
+                "mean_e_fold": math.log(mean_scale),
+                "volume_e_fold": math.log(volume),
+                "particle_speed_ratio": particle_speed_ratio,
+                "channel_speed_ratio_4": channel_speed_ratios[4],
+                "channel_speed_ratio_5": channel_speed_ratios[5],
+                "channel_speed_ratio_6": channel_speed_ratios[6],
+                "total_exchange_energy": total_exchange,
+                "dissipated_energy": dissipated,
+                "indirect_particle_response_rate": indirect_response_rate,
+                "energy_ledger_error": ledger_error,
+            })
+
+    df = pd.DataFrame(rows)
+    event_df = pd.DataFrame(events)
+    final = df.iloc[-1]
+
+    first_expansion = event_df.loc[event_df.event_class == "expansion_onset", "time_tau"] if not event_df.empty else pd.Series(dtype=float)
+    first_convergence = event_df.loc[event_df.event_class == "convergence_onset", "time_tau"] if not event_df.empty else pd.Series(dtype=float)
+    first_channel_iso = event_df.loc[event_df.event_class == "channel_isolation_onset", "time_tau"] if not event_df.empty else pd.Series(dtype=float)
+    first_particle_iso = event_df.loc[event_df.event_class == "particle_isolation_onset", "time_tau"] if not event_df.empty else pd.Series(dtype=float)
+
+    if float(final.mean_scale_factor) <= 1e-6:
+        terminal = "scale_floor_contracted_d3"
+    elif float(final.mean_H) <= p.contraction_event_threshold:
+        terminal = "converging_d3"
+    elif float(final.directional_H_shear) >= p.shear_event_threshold:
+        terminal = "anisotropic_expansion_d3"
+    elif float(final.particle_isolated_fraction) > 0.5 or float(final.cross_energy_isolated_fraction) > 0.5:
+        terminal = "expansion_isolated_d3"
+    elif float(final.total_exchange_energy) < p.extinction_energy_threshold:
+        terminal = "exchange_extinct_stable_d3"
+    else:
+        terminal = "relaxing_d3"
+
+    summary = {
+        "scenario": p.name,
+        "base_dimension": 3,
+        "terminal_state": terminal,
+        "theta_deg_4": theta_deg(p, 4),
+        "theta_deg_5": theta_deg(p, 5),
+        "theta_deg_6": theta_deg(p, 6),
+        "total_gross_crossing": cumulative_gross_crossing,
+        "total_pass_through": cumulative_pass,
+        "total_internal_coupling": cumulative_internal_coupling,
+        "total_cross_to_d3": cumulative_cross_to_d3,
+        "total_withdrawal_outflow": cumulative_withdrawal,
+        "pass_through_fraction": cumulative_pass / max(cumulative_gross_crossing, 1e-12),
