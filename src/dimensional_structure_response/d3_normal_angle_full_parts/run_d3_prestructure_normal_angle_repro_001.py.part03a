@@ -1,0 +1,110 @@
+        "internal_coupling_fraction": cumulative_internal_coupling / max(cumulative_gross_crossing, 1e-12),
+        "total_direct_particle_import": cumulative_direct_particle,
+        "cumulative_indirect_particle_response": cumulative_indirect_particle_response,
+        "final_mean_scale_factor": float(final.mean_scale_factor),
+        "final_volume_factor": float(final.volume_factor),
+        "total_mean_e_fold": float(final.mean_e_fold),
+        "total_volume_e_fold": float(final.volume_e_fold),
+        "peak_mean_H": float(df.mean_H.max()),
+        "minimum_mean_H": float(df.mean_H.min()),
+        "final_mean_H": float(final.mean_H),
+        "peak_directional_H_shear": float(df.directional_H_shear.max()),
+        "final_directional_H_shear": float(final.directional_H_shear),
+        "peak_axial_tension_deviation": float(df.axial_tension_deviation.max()),
+        "final_axial_tension_deviation": float(final.axial_tension_deviation),
+        "first_expansion_time_tau": None if first_expansion.empty else float(first_expansion.iloc[0]),
+        "first_convergence_time_tau": None if first_convergence.empty else float(first_convergence.iloc[0]),
+        "first_channel_isolation_time_tau": None if first_channel_iso.empty else float(first_channel_iso.iloc[0]),
+        "first_particle_isolation_time_tau": None if first_particle_iso.empty else float(first_particle_iso.iloc[0]),
+        "final_particle_isolated_fraction": float(final.particle_isolated_fraction),
+        "final_cross_energy_isolated_fraction": float(final.cross_energy_isolated_fraction),
+        "final_exchange_energy": float(final.total_exchange_energy),
+        "max_energy_ledger_error": float(df.energy_ledger_error.abs().max()),
+    }
+    return df, event_df, summary
+
+
+def params_from_row(row: dict) -> Params:
+    defaults = asdict(Params(name=str(row.get("name", "scenario"))))
+    for key, value in row.items():
+        if key in defaults and not pd.isna(value):
+            defaults[key] = value
+    defaults["name"] = str(defaults["name"])
+    return Params(**defaults)
+
+
+def angle_scan(base: Params) -> pd.DataFrame:
+    records = []
+    for angle in range(0, 91, 5):
+        p = Params(**{
+            **asdict(base),
+            "name": f"common_angle_{angle:02d}",
+            "theta_deg_4": float(angle),
+            "theta_deg_5": float(angle),
+            "theta_deg_6": float(angle),
+            "dt": 0.004,
+        })
+        _, _, summary = simulate(p, record_stride=10)
+        crossing = math.cos(math.radians(angle)) ** p.crossing_power
+        coupling = math.sin(math.radians(angle)) ** p.domain_coupling_power
+        records.append({
+            "common_angle_deg": angle,
+            "analytic_crossing_factor": crossing,
+            "analytic_domain_coupling_fraction": coupling,
+            "analytic_internal_transfer_kernel": crossing * coupling,
+            **summary,
+        })
+    return pd.DataFrame(records)
+
+
+def grid_table(base: Params) -> pd.DataFrame:
+    records = []
+    angles = (5.0, 25.0, 45.0, 55.0, 75.0)
+    outflow_scales = (0.5, 1.0, 1.8, 2.8, 4.0)
+    equalization_scales = (0.25, 0.50, 1.0, 1.75, 3.0)
+    for angle, out_scale, eq_scale in product(angles, outflow_scales, equalization_scales):
+        p = Params(**{
+            **asdict(base),
+            "name": f"grid_a{angle:.0f}_o{out_scale:.2f}_e{eq_scale:.2f}",
+            "theta_deg_4": angle,
+            "theta_deg_5": angle,
+            "theta_deg_6": angle,
+            "k_outflow_cross": base.k_outflow_cross * out_scale,
+            "k_outflow_relax": base.k_outflow_relax * out_scale,
+            "convergence_memory_gain": base.convergence_memory_gain * out_scale,
+            "tension_equalization": base.tension_equalization * eq_scale,
+            "directional_hubble_equalization": base.directional_hubble_equalization * eq_scale,
+            "dt": 0.040,
+            "t_end": 16.0,
+        })
+        _, _, summary = simulate(p, record_stride=20)
+        records.append({
+            "common_angle_deg": angle,
+            "outflow_scale": out_scale,
+            "equalization_scale": eq_scale,
+            **summary,
+        })
+    return pd.DataFrame(records)
+
+
+def convergence_table(base: Params) -> pd.DataFrame:
+    records = []
+    for dt in (0.008, 0.004, 0.002, 0.001):
+        p = Params(**{**asdict(base), "name": f"convergence_{dt}", "dt": dt})
+        _, _, summary = simulate(p, record_stride=10)
+        records.append({
+            "dt": dt,
+            "total_mean_e_fold": summary["total_mean_e_fold"],
+            "peak_mean_H": summary["peak_mean_H"],
+            "total_internal_coupling": summary["total_internal_coupling"],
+            "pass_through_fraction": summary["pass_through_fraction"],
+            "peak_axial_tension_deviation": summary["peak_axial_tension_deviation"],
+            "peak_directional_H_shear": summary["peak_directional_H_shear"],
+            "max_energy_ledger_error": summary["max_energy_ledger_error"],
+        })
+    return pd.DataFrame(records)
+
+
+def write_plots(output: Path, frames: Dict[str, pd.DataFrame], scan: pd.DataFrame) -> None:
+    import matplotlib.pyplot as plt
+

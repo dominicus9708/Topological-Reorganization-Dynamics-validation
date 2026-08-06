@@ -1,0 +1,110 @@
+                cross_connected[q],
+                p.k_isolation_channel * gate * cross_connected[q],
+                p.dt,
+            )
+            cross_connected[q] -= amount
+            cross_isolated[q] += amount
+            amount = take(
+                cross_isolated[q],
+                p.k_reconnection_channel * (1.0 - gate) * cross_isolated[q],
+                p.dt,
+            )
+            cross_isolated[q] -= amount
+            cross_connected[q] += amount
+
+            amount = take(
+                relax_connected[axis],
+                p.k_isolation_channel * gate * relax_connected[axis],
+                p.dt,
+            )
+            relax_connected[axis] -= amount
+            relax_isolated[axis] += amount
+            amount = take(
+                relax_isolated[axis],
+                p.k_reconnection_channel * (1.0 - gate) * relax_isolated[axis],
+                p.dt,
+            )
+            relax_isolated[axis] -= amount
+            relax_connected[axis] += amount
+
+        indirect_response_rate = (
+            abs(mean_h) + float(np.linalg.norm(d_hubble))
+            + tension_deviation + shear_h + float(np.linalg.norm(tension_derivative))
+        ) * (particle_connected + particle_isolated)
+        cumulative_indirect_particle_response += indirect_response_rate * p.dt
+
+        if not expansion_active and mean_h >= p.expansion_event_threshold:
+            _event(events, p, t, "expansion_onset", "mean_d3_expansion_positive",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            expansion_active = True
+        elif expansion_active and mean_h < 0.5 * p.expansion_event_threshold:
+            _event(events, p, t, "expansion_relaxation", "mean_d3_expansion_below_threshold",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            expansion_active = False
+
+        if not contraction_active and mean_h <= p.contraction_event_threshold:
+            _event(events, p, t, "convergence_onset", "withdrawal_outflow_drives_mean_convergence",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            contraction_active = True
+        elif contraction_active and mean_h > 0.5 * p.contraction_event_threshold:
+            _event(events, p, t, "convergence_relaxation", "mean_convergence_below_threshold",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            contraction_active = False
+
+        if not anisotropy_active and tension_deviation >= p.anisotropy_event_threshold:
+            _event(events, p, t, "tension_anisotropy_onset", "axial_tension_deviation_exceeds_threshold",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            anisotropy_active = True
+        elif anisotropy_active and tension_deviation < 0.7 * p.anisotropy_event_threshold:
+            _event(events, p, t, "tension_anisotropy_relaxation", "axial_tension_deviation_relaxes",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            anisotropy_active = False
+
+        if not shear_active and shear_h >= p.shear_event_threshold:
+            _event(events, p, t, "directional_expansion_shear_onset", "directional_H_shear_exceeds_threshold",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            shear_active = True
+        elif shear_active and shear_h < 0.7 * p.shear_event_threshold:
+            _event(events, p, t, "directional_expansion_shear_relaxation", "directional_H_shear_relaxes",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            shear_active = False
+
+        if previous_particle_ratio < 1.0 <= particle_speed_ratio:
+            _event(events, p, t, "particle_isolation_onset", "mean_separation_speed_exceeds_particle_information_bound",
+                   mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                   cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+        previous_particle_ratio = particle_speed_ratio
+
+        for q in CHANNELS:
+            if previous_channel_ratio[q] < 1.0 <= channel_speed_ratios[q]:
+                _event(events, p, t, "channel_isolation_onset", f"channel_{q}_separation_speed_exceeds_bound",
+                       mean_scale, mean_h, shear_h, cumulative_gross_crossing,
+                       cumulative_pass, cumulative_internal_coupling, cumulative_withdrawal)
+            previous_channel_ratio[q] = channel_speed_ratios[q]
+
+        particle_total = particle_connected + particle_isolated
+        particle_iso_fraction = particle_isolated / max(particle_total, 1e-12)
+        cross_total = sum(cross_connected.values()) + sum(cross_isolated.values())
+        cross_iso_fraction = sum(cross_isolated.values()) / max(cross_total, 1e-12)
+        relax_total = float(np.sum(relax_connected) + np.sum(relax_isolated))
+        relax_iso_fraction = float(np.sum(relax_isolated)) / max(relax_total, 1e-12)
+        total_exchange = cross_total + relax_total
+
+        ledger = (
+            prestructure + cross_total + relax_total + dissipated + direct_particle_import
+        )
+        ledger_error = ledger - p.initial_prestructure_energy
+
+        if mean_h >= p.expansion_event_threshold:
+            phase = "expansion"
+        elif mean_h <= p.contraction_event_threshold:
+            phase = "convergence"
+        elif shear_h >= p.shear_event_threshold:

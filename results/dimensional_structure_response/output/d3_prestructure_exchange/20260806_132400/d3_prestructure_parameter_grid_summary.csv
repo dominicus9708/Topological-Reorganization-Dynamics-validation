@@ -1,0 +1,14 @@
+terminal_state,final_active_cross_channels,final_connected_cross_channels,cell_count
+expansion_isolated_d3,3,0,70
+expansion_isolated_d3,0,0,9
+converging_d3,0,0,9
+expansion_isolated_d3,2,0,6
+converging_d3,3,0,6
+scale_floor_contracted_d3,0,0,5
+converging_d3,3,3,4
+expansion_isolated_d3,3,1,4
+expansion_isolated_d3,1,0,3
+expansion_isolated_d3,3,3,3
+expansion_isolated_d3,3,2,2
+scale_floor_contracted_d3,1,0,2
+scale_floor_contracted_d3,3,0,2

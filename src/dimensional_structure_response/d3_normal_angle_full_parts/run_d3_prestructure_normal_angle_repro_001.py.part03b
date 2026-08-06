@@ -1,0 +1,110 @@
+    plt.figure(figsize=(9, 5))
+    plt.plot(scan.common_angle_deg, scan.total_internal_coupling, marker="o", label="simulated internal coupling")
+    scaled = scan.analytic_internal_transfer_kernel
+    scaled = scaled / max(float(scaled.max()), 1e-12) * float(scan.total_internal_coupling.max())
+    plt.plot(scan.common_angle_deg, scaled, linestyle="--", label="scaled cos(theta) sin^2(theta)")
+    plt.xlabel("axis-normal angle (degrees)")
+    plt.ylabel("cumulative D3 internal coupling")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output / "d3_normal_angle_internal_coupling_scan.png", dpi=180)
+    plt.close()
+
+    plt.figure(figsize=(9, 5))
+    plt.plot(scan.common_angle_deg, scan.total_pass_through, marker="o", label="pass-through")
+    plt.plot(scan.common_angle_deg, scan.total_mean_e_fold, marker="s", label="mean e-fold")
+    plt.xlabel("axis-normal angle (degrees)")
+    plt.ylabel("cumulative response")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output / "d3_normal_angle_pass_and_expansion_scan.png", dpi=180)
+    plt.close()
+
+    plt.figure(figsize=(9, 5))
+    for name, frame in frames.items():
+        plt.plot(frame.t_tau, frame.mean_scale_factor, label=name)
+    plt.xlabel("t / tau")
+    plt.ylabel("mean scale factor")
+    plt.legend(fontsize=8)
+    plt.tight_layout()
+    plt.savefig(output / "d3_normal_angle_scale_factor_by_scenario.png", dpi=180)
+    plt.close()
+
+    if "mixed_angle_anisotropic" in frames:
+        frame = frames["mixed_angle_anisotropic"]
+        plt.figure(figsize=(9, 5))
+        plt.plot(frame.t_tau, frame.scale_x, label="a_x")
+        plt.plot(frame.t_tau, frame.scale_y, label="a_y")
+        plt.plot(frame.t_tau, frame.scale_z, label="a_z")
+        plt.xlabel("t / tau")
+        plt.ylabel("directional scale factor")
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(output / "d3_normal_angle_directional_scale_mixed.png", dpi=180)
+        plt.close()
+
+
+def sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input-config", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--write-grid", action="store_true")
+    args = parser.parse_args()
+
+    args.output.mkdir(parents=True, exist_ok=True)
+    input_df = pd.read_csv(args.input_config)
+    scenarios = [params_from_row(row) for row in input_df.to_dict(orient="records")]
+
+    summaries = []
+    event_frames = []
+    frames: Dict[str, pd.DataFrame] = {}
+    for p in scenarios:
+        frame, events, summary = simulate(p)
+        frames[p.name] = frame
+        summaries.append(summary)
+        event_frames.append(events)
+        frame.to_csv(args.output / f"d3_normal_angle_timeseries_{p.name}.csv", index=False)
+
+    summary_df = pd.DataFrame(summaries)
+    event_df = pd.concat(event_frames, ignore_index=True) if event_frames else pd.DataFrame()
+    scan_df = angle_scan(scenarios[1] if len(scenarios) > 1 else scenarios[0])
+    conv_df = convergence_table(scenarios[1] if len(scenarios) > 1 else scenarios[0])
+
+    summary_df.to_csv(args.output / "d3_normal_angle_scenario_summary.csv", index=False)
+    event_df.to_csv(args.output / "d3_normal_angle_event_log.csv", index=False)
+    scan_df.to_csv(args.output / "d3_normal_angle_common_angle_scan.csv", index=False)
+    conv_df.to_csv(args.output / "d3_normal_angle_convergence.csv", index=False)
+
+    if args.write_grid:
+        grid_df = grid_table(scenarios[1] if len(scenarios) > 1 else scenarios[0])
+        grid_df.to_csv(args.output / "d3_normal_angle_parameter_grid_125.csv", index=False)
+        grid_summary = (
+            grid_df.groupby("terminal_state", dropna=False)
+            .size().reset_index(name="count")
+            .sort_values("count", ascending=False)
+        )
+        grid_summary.to_csv(args.output / "d3_normal_angle_parameter_grid_summary.csv", index=False)
+
+    write_plots(args.output, frames, scan_df)
+
+    key = summary_df[[
+        "scenario", "theta_deg_4", "theta_deg_5", "theta_deg_6",
+        "total_gross_crossing", "total_pass_through", "total_internal_coupling",
+        "pass_through_fraction", "internal_coupling_fraction",
+        "total_withdrawal_outflow", "total_mean_e_fold", "peak_mean_H",
+        "peak_axial_tension_deviation", "peak_directional_H_shear",
+        "total_direct_particle_import", "cumulative_indirect_particle_response",
+        "terminal_state", "max_energy_ledger_error",
+    ]]
+    key.to_csv(args.output / "d3_normal_angle_key_measurements.csv", index=False)
+
+    manifest = {
+        "model": "D3 prestructure axis-normal angle exchange",

@@ -1,0 +1,13 @@
+        "base_dimension": 3,
+        "input": str(args.input_config),
+        "output": str(args.output),
+        "files": {},
+    }
+    for path in sorted(args.output.iterdir()):
+        if path.is_file():
+            manifest["files"][path.name] = {"sha256": sha256(path), "bytes": path.stat().st_size}
+    (args.output / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()
